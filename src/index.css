@@ -1,0 +1,38 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Color palette from image */
+  --color-yellow: #FFE500;
+  --color-lime: #C8DC5A;
+  --color-green: #8CC63F;
+  --color-teal: #00A99D;
+  --color-cyan: #00BCD4;
+  --color-blue: #00ACC1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Custom styles */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-teal) 100%);
+}
+
+.section-gap {
+  padding: 5rem 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .section-gap {
+    padding: 3rem 1.5rem;
+  }
+}

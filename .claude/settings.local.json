@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:unizin.webflow.io)",
+      "Bash(npm create:*)",
+      "Bash(npm init:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
