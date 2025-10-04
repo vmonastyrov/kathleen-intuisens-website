@@ -123,29 +123,49 @@ bun run preview
 
 ## 🌐 Деплой
 
-### Вариант 1: GitHub Pages
+### Вариант 1: GitHub Pages (рекомендуется) ⭐
 
-1. Установите gh-pages:
+#### Требования:
+- **Репозиторий должен быть PUBLIC** (для бесплатного аккаунта GitHub)
+- Или GitHub Pro/Team/Enterprise для приватных репозиториев
+
+#### Автоматический деплой через GitHub Actions:
+
+1. **Сделайте репозиторий публичным** (если еще не сделали):
+   - Перейдите в Settings репозитория на GitHub
+   - Внизу страницы в разделе "Danger Zone" → "Change visibility" → "Make public"
+
+2. **Включите GitHub Pages**:
+   - Settings → Pages
+   - Source: "GitHub Actions"
+
+3. **Запушьте код** (GitHub Actions уже настроен):
+```bash
+git push
+```
+
+Сайт автоматически задеплоится на:
+**https://vmonastyrov.github.io/kathleen-intuisens-website/**
+
+#### Ручной деплой (альтернатива):
+
+1. Соберите проект:
+```bash
+bun run build
+```
+
+2. Установите gh-pages:
 ```bash
 bun add -D gh-pages
 ```
 
-2. Добавьте в `package.json`:
+3. Добавьте скрипт в `package.json`:
 ```json
 {
   "scripts": {
-    "deploy": "bun run build && gh-pages -d dist"
-  },
-  "homepage": "https://vmonastyrov.github.io/kathleen-intuisens-website"
+    "deploy": "gh-pages -d dist"
+  }
 }
-```
-
-3. Обновите `vite.config.ts`:
-```typescript
-export default defineConfig({
-  base: '/kathleen-intuisens-website/',
-  // ... остальная конфигурация
-})
 ```
 
 4. Задеплойте:
