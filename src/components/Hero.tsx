@@ -1,9 +1,10 @@
 const Hero = () => {
   return (
     <section className="hero is-fullheight-with-navbar" style={{
-      background: 'linear-gradient(135deg, rgba(0, 188, 212, 0.9) 0%, rgba(0, 169, 157, 0.9) 100%), url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80)',
+      background: 'linear-gradient(135deg, rgba(0, 188, 212, 0.85) 0%, rgba(0, 169, 157, 0.85) 100%), url(https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&q=80)',
       backgroundSize: 'cover',
-      backgroundPosition: 'center'
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed'
     }}>
       <div className="hero-body">
         <div className="container">
