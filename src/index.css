@@ -3,13 +3,28 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* Color palette from image */
-  --color-yellow: #FFE500;
-  --color-lime: #C8DC5A;
-  --color-green: #8CC63F;
-  --color-teal: #00A99D;
-  --color-cyan: #00BCD4;
-  --color-blue: #00ACC1;
+  /* IntuiSens Color Palette */
+  /* Primary Accent Colors */
+  --color-gold: #FCC741;           /* Gelb-Gold - Logo, CTA buttons, accent lines */
+  --color-yellow-green: #95B467;   /* Warmes Gelb-Grün - Logo, icons, links */
+
+  /* Background Colors */
+  --color-bg-main: #F4F0E9;        /* Seitenhintergrund - warm off-white */
+  --color-bg-section1: #E5E9EF;    /* Abschnittshintergründe - light grey with warm touch */
+  --color-bg-section2: #E9EEF4;    /* Abschnittshintergründe - pale taupe-blue-greige */
+
+  /* Text & UI Colors */
+  --color-heading: #214B78;        /* Haupt-Überschrift - deep blue-grey */
+  --color-subheading: #4A6D8F;     /* Unter-Überschrift - grey-blue */
+  --color-divider: #C7CED8;        /* Trenn-Linien - muted grey */
+
+  /* Legacy colors (for gradual migration) */
+  --color-yellow: #FCC741;
+  --color-lime: #95B467;
+  --color-green: #95B467;
+  --color-teal: #4A6D8F;
+  --color-cyan: #214B78;
+  --color-blue: #214B78;
 }
 
 * {
@@ -20,6 +35,7 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--color-bg-main);
 }
 
 /* Custom styles */

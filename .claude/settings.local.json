@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:unizin.webflow.io)",
       "Bash(npm create:*)",
-      "Bash(npm init:*)"
+      "Bash(npm init:*)",
+      "Read(//tmp/**)"
     ],
     "deny": [],
     "ask": []

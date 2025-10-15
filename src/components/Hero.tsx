@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
-    <section className="hero is-fullheight-with-navbar" style={{
-      background: 'linear-gradient(135deg, rgba(0, 188, 212, 0.85) 0%, rgba(0, 169, 157, 0.85) 100%), url(https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&q=80)',
+    <section id="home" className="hero is-large" style={{
+      background: 'linear-gradient(135deg, rgba(74, 109, 143, 0.7) 0%, rgba(33, 75, 120, 0.8) 100%), url(https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=1920&q=80)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
@@ -9,39 +9,28 @@ const Hero = () => {
       <div className="hero-body">
         <div className="container">
           <div className="columns is-vcentered">
-            <div className="column is-6">
-              <h1 className="title has-text-white" style={{ fontSize: '4rem', lineHeight: '1.1', marginBottom: '2rem', fontWeight: 800 }}>
-                Innovative learning for everyone
+            <div className="column is-8 is-offset-2 has-text-centered">
+              <h1 className="title has-text-white" style={{ fontSize: '3.5rem', lineHeight: '1.2', marginBottom: '2rem', fontWeight: 700 }}>
+                Berühren berührt
               </h1>
-              <p className="subtitle has-text-white" style={{ fontSize: '1.3rem', marginBottom: '3rem', lineHeight: '1.6' }}>
-                Empowering students to achieve their dreams through quality education and innovative teaching methods
+              <p className="subtitle has-text-white" style={{ fontSize: '1.5rem', marginBottom: '3rem', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 3rem' }}>
+                Ich qualifiziere (werdende) Hebammen, Kinder und ihre Eltern mit allen Sinnen zu begleiten
               </p>
-              <div className="buttons">
-                <a className="button is-white is-large" style={{ fontWeight: 600, padding: '1.75rem 3rem', borderRadius: '8px' }}>
-                  Apply Now →
+              <div className="buttons is-centered">
+                <a
+                  className="button is-large"
+                  href="#intuition"
+                  style={{
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-heading)',
+                    fontWeight: 600,
+                    padding: '1.75rem 3rem',
+                    borderRadius: '8px',
+                    border: 'none'
+                  }}
+                >
+                  Mehr erfahren →
                 </a>
-              </div>
-            </div>
-            <div className="column is-6">
-              <div className="box" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', padding: '2.5rem', borderRadius: '12px' }}>
-                <div className="columns is-mobile is-multiline has-text-centered">
-                  <div className="column is-6">
-                    <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--color-teal)', marginBottom: '0.5rem' }}>92%</p>
-                    <p style={{ fontSize: '0.9rem', color: '#666', fontWeight: 500 }}>Job Placement</p>
-                  </div>
-                  <div className="column is-6">
-                    <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--color-cyan)', marginBottom: '0.5rem' }}>1850</p>
-                    <p style={{ fontSize: '0.9rem', color: '#666', fontWeight: 500 }}>Founded</p>
-                  </div>
-                  <div className="column is-6">
-                    <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--color-green)', marginBottom: '0.5rem' }}>15K+</p>
-                    <p style={{ fontSize: '0.9rem', color: '#666', fontWeight: 500 }}>Students</p>
-                  </div>
-                  <div className="column is-6">
-                    <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--color-yellow)', marginBottom: '0.5rem' }}>200+</p>
-                    <p style={{ fontSize: '0.9rem', color: '#666', fontWeight: 500 }}>Programs</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
