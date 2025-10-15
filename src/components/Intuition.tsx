@@ -46,9 +46,9 @@ const Intuition = () => {
           }}>
             Intuition und Sensitivität in der Geburts-, Frauen und Familienbegleitung
           </h2>
-          <p className="subtitle" style={{
-            fontSize: '1.2rem',
-            color: '#666',
+          <p style={{
+            fontSize: '1.1rem',
+            color: '#555',
             lineHeight: '1.8',
             maxWidth: '900px',
             margin: '0 auto 3rem'

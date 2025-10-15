@@ -1,12 +1,13 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light;
+  font-family: Herculanum, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   /* IntuiSens Color Palette */
   /* Primary Accent Colors */
-  --color-gold: #FCC741;           /* Gelb-Gold - Logo, CTA buttons, accent lines */
-  --color-yellow-green: #95B467;   /* Warmes Gelb-Grün - Logo, icons, links */
+  --color-gold: #FCC741;           /* Gelb-Gold - einzelne Textzeilen, Linien, Icons, Hintergründe */
+  --color-yellow-green: #95B467;   /* Warmes Gelb-Grün - Links, Buttons, Bullets, Icons */
 
   /* Background Colors */
   --color-bg-main: #F4F0E9;        /* Seitenhintergrund - warm off-white */
@@ -34,8 +35,13 @@
 }
 
 body {
+  color-scheme: light;
   min-height: 100vh;
   background-color: var(--color-bg-main);
+}
+
+h1, h2, h3, h4, h5, h6, .title, .subtitle {
+  font-family: Bauhaus, Herculanum, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
 }
 
 /* Custom styles */

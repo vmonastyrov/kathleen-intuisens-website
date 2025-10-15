@@ -60,8 +60,8 @@ const About = () => {
                 href="#kontakt"
                 className="button is-medium"
                 style={{
-                  backgroundColor: 'var(--color-gold)',
-                  color: 'var(--color-heading)',
+                  backgroundColor: 'var(--color-yellow-green)',
+                  color: 'white',
                   border: 'none',
                   fontWeight: 600,
                   borderRadius: '8px'

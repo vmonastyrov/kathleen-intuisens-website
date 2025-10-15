@@ -34,7 +34,7 @@ const Contact = () => {
           <div className="column is-5">
             <p style={{
               fontSize: '1.1rem',
-              color: '#B8941E',
+              color: 'var(--color-gold)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',
@@ -60,14 +60,14 @@ const Contact = () => {
                   Navanita K. Manke
                 </h4>
                 <p style={{ marginBottom: '1rem' }}>
-                  <strong>Telefon:</strong> <a href="tel:+4916022726724" style={{ color: '#B8941E', textDecoration: 'none' }}>+49 160 22 726 724</a><br />
+                  <strong>Telefon:</strong> <a href="tel:+4916022726724" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>+49 160 22 726 724</a><br />
                   <span style={{ fontSize: '0.95rem', color: '#777' }}>
                     Telefonisch erreichbar Mo–Fr 8–9 Uhr<br />
                     Rückruf innerhalb von 48 Std. bei Nachricht auf AB
                   </span>
                 </p>
                 <p>
-                  <strong>E-Mail:</strong> <a href="mailto:info@intuisens.de" style={{ color: '#B8941E', textDecoration: 'none' }}>info@intuisens.de</a>
+                  <strong>E-Mail:</strong> <a href="mailto:info@intuisens.de" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>info@intuisens.de</a>
                 </p>
               </div>
             </div>
@@ -95,7 +95,14 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      style={{ borderColor: 'var(--color-divider)' }}
+                      style={{
+                        borderColor: 'var(--color-divider)',
+                        backgroundColor: 'white',
+                        color: '#363636',
+                        WebkitAppearance: 'none',
+                        appearance: 'none',
+                        colorScheme: 'light'
+                      }}
                     />
                   </div>
                 </div>
@@ -111,7 +118,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      style={{ borderColor: 'var(--color-divider)' }}
+                      style={{
+                        borderColor: 'var(--color-divider)',
+                        backgroundColor: 'white',
+                        color: '#363636',
+                        WebkitAppearance: 'none',
+                        appearance: 'none',
+                        colorScheme: 'light'
+                      }}
                     />
                   </div>
                 </div>
@@ -126,7 +140,14 @@ const Contact = () => {
                       placeholder="Betreff Ihrer Nachricht"
                       value={formData.subject}
                       onChange={handleChange}
-                      style={{ borderColor: 'var(--color-divider)' }}
+                      style={{
+                        borderColor: 'var(--color-divider)',
+                        backgroundColor: 'white',
+                        color: '#363636',
+                        WebkitAppearance: 'none',
+                        appearance: 'none',
+                        colorScheme: 'light'
+                      }}
                     />
                   </div>
                 </div>
@@ -142,7 +163,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      style={{ borderColor: 'var(--color-divider)' }}
+                      style={{
+                        borderColor: 'var(--color-divider)',
+                        backgroundColor: 'white',
+                        color: '#363636',
+                        WebkitAppearance: 'none',
+                        appearance: 'none',
+                        colorScheme: 'light'
+                      }}
                     />
                   </div>
                 </div>
@@ -153,8 +181,8 @@ const Contact = () => {
                       type="submit"
                       className="button is-large is-fullwidth"
                       style={{
-                        backgroundColor: 'var(--color-gold)',
-                        color: 'var(--color-heading)',
+                        backgroundColor: 'var(--color-yellow-green)',
+                        color: 'white',
                         border: 'none',
                         fontWeight: 600,
                         borderRadius: '8px'

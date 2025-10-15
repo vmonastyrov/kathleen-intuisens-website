@@ -21,8 +21,8 @@ const Hero = () => {
                   className="button is-large"
                   href="#intuition"
                   style={{
-                    backgroundColor: 'var(--color-gold)',
-                    color: 'var(--color-heading)',
+                    backgroundColor: 'var(--color-yellow-green)',
+                    color: 'white',
                     fontWeight: 600,
                     padding: '1.75rem 3rem',
                     borderRadius: '8px',

@@ -19,8 +19,8 @@ const Footer = () => {
               </span>
             </p>
             <p style={{ color: '#D1D5DB', lineHeight: '2', marginTop: '1rem', fontSize: '1.05rem' }}>
-              <strong style={{ color: 'white' }}>E-Mail:</strong> <a href="mailto:info@intuisens.de" style={{ color: 'var(--color-gold)', textDecoration: 'none' }}>info@intuisens.de</a><br />
-              <strong style={{ color: 'white' }}>Website:</strong> <a href="https://www.intuisens.de" style={{ color: 'var(--color-gold)', textDecoration: 'none' }}>www.intuisens.de</a>
+              <strong style={{ color: 'white' }}>E-Mail:</strong> <a href="mailto:info@intuisens.de" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>info@intuisens.de</a><br />
+              <strong style={{ color: 'white' }}>Website:</strong> <a href="https://www.intuisens.de" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>www.intuisens.de</a>
             </p>
           </div>
           <div className="column is-3 is-offset-1">
@@ -28,42 +28,42 @@ const Footer = () => {
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#home" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Home
                 </a>
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#about" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Über mich
                 </a>
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#intuition" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Intuition & Sensitivität
                 </a>
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#haptonomie" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Haptonomie
                 </a>
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#module" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Module
                 </a>
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#zusammenarbeit" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Zusammenarbeit
                 </a>
@@ -75,21 +75,21 @@ const Footer = () => {
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   AGB
                 </a>
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Impressum
                 </a>
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold)'}
+                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                    onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                   Datenschutz
                 </a>

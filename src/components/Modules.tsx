@@ -61,7 +61,7 @@ const Modules = () => {
           borderRadius: '12px',
           padding: '3rem',
           marginBottom: '3rem',
-          border: '2px solid var(--color-gold)',
+          border: '2px solid var(--color-divider)',
           boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
         }}>
           <div className="columns is-vcentered">
@@ -158,7 +158,7 @@ const Modules = () => {
                       <span style={{
                         position: 'absolute',
                         left: 0,
-                        color: 'var(--color-gold)',
+                        color: 'var(--color-yellow-green)',
                         fontWeight: 'bold'
                       }}>•</span>
                       {topic}

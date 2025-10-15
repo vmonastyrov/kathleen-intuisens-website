@@ -48,8 +48,8 @@ const Zusammenarbeit = () => {
                 href="#kontakt"
                 className="button is-large"
                 style={{
-                  backgroundColor: 'var(--color-gold)',
-                  color: 'var(--color-heading)',
+                  backgroundColor: 'var(--color-yellow-green)',
+                  color: 'white',
                   border: 'none',
                   fontWeight: 600,
                   borderRadius: '8px'
