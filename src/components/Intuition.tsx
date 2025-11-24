@@ -23,7 +23,7 @@ const Intuition = () => {
   ]
 
   return (
-    <section id="intuition" className="section" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+    <section id="intuition" className="section" aria-labelledby="intuition-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
       <div className="container">
         <div className="has-text-centered mb-6">
           <p style={{
@@ -33,10 +33,10 @@ const Intuition = () => {
             marginBottom: '1rem',
             textTransform: 'uppercase',
             letterSpacing: '1px'
-          }}>
+          }} aria-label="Seitenbereich">
             Intuition und Sensitivität
           </p>
-          <h2 className="title" style={{
+          <h2 id="intuition-heading" className="title" style={{
             fontSize: '2.5rem',
             color: 'var(--color-heading)',
             marginBottom: '2rem',

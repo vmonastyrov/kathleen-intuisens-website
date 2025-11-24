@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: 'var(--color-heading)', color: 'white', padding: '4rem 1.5rem 2rem' }}>
+    <footer role="contentinfo" style={{ backgroundColor: 'var(--color-heading)', color: 'white', padding: '4rem 1.5rem 2rem' }}>
       <div className="container">
         <div className="columns">
           <div className="column is-5">
@@ -24,77 +24,81 @@ const Footer = () => {
             </p>
           </div>
           <div className="column is-3 is-offset-1">
-            <h4 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1.5rem' }}>Navigation</h4>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#home" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Home
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#about" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Über mich
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#intuition" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Intuition & Sensitivität
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#haptonomie" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Haptonomie
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#module" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Module
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#zusammenarbeit" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Zusammenarbeit
-                </a>
-              </li>
-            </ul>
+            <nav aria-label="Footer Navigation">
+              <h4 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1.5rem' }}>Navigation</h4>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#home" aria-label="Zur Startseite" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Home
+                  </a>
+                </li>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#about" aria-label="Über Navanita K. Manke" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Über mich
+                  </a>
+                </li>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#intuition" aria-label="Zum Bereich Intuition und Sensitivität" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Intuition & Sensitivität
+                  </a>
+                </li>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#haptonomie" aria-label="Zum Bereich Haptonomie" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Haptonomie
+                  </a>
+                </li>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#module" aria-label="Zu den Ausbildungsmodulen" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Module
+                  </a>
+                </li>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#zusammenarbeit" aria-label="Zur Zusammenarbeit" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Zusammenarbeit
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className="column is-3">
-            <h4 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1.5rem' }}>Rechtliches</h4>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  AGB
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Impressum
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.75rem' }}>
-                <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                   onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                  Datenschutz
-                </a>
-              </li>
-            </ul>
+            <nav aria-label="Rechtliche Informationen">
+              <h4 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1.5rem' }}>Rechtliches</h4>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#" aria-label="Allgemeine Geschäftsbedingungen" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    AGB
+                  </a>
+                </li>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#" aria-label="Impressum" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Impressum
+                  </a>
+                </li>
+                <li style={{ marginBottom: '0.75rem' }}>
+                  <a href="#" aria-label="Datenschutzerklärung" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
+                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
+                    Datenschutz
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
         <hr style={{ backgroundColor: 'rgba(255,255,255,0.2)', margin: '3rem 0 1.5rem', height: '1px', border: 'none' }} />

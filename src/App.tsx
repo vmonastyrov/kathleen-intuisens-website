@@ -21,14 +21,20 @@ function App() {
         <meta property="og:type" content="website" />
       </Helmet>
 
+      <a href="#main-content" className="skip-to-content">
+        Zum Hauptinhalt springen
+      </a>
+
       <Header />
-      <Hero />
-      <About />
-      <Intuition />
-      <Haptonomie />
-      <Modules />
-      <Zusammenarbeit />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Intuition />
+        <Haptonomie />
+        <Modules />
+        <Zusammenarbeit />
+        <Contact />
+      </main>
       <Footer />
     </>
   )

@@ -33,7 +33,7 @@ const Modules = () => {
   ]
 
   return (
-    <section id="module" className="section" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
+    <section id="module" className="section" aria-labelledby="modules-heading" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
       <div className="container">
         <div className="has-text-centered mb-6">
           <p style={{
@@ -43,10 +43,10 @@ const Modules = () => {
             marginBottom: '1rem',
             textTransform: 'uppercase',
             letterSpacing: '1px'
-          }}>
+          }} aria-label="Seitenbereich">
             Ausbildungs-Module
           </p>
-          <h2 className="title" style={{
+          <h2 id="modules-heading" className="title" style={{
             fontSize: '2.5rem',
             color: 'var(--color-heading)',
             marginBottom: '2rem'

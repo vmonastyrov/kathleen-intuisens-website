@@ -29,14 +29,14 @@ const Haptonomie = () => {
   return (
     <>
       {/* Main Haptonomie Section */}
-      <section id="haptonomie" className="section" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
+      <section id="haptonomie" className="section" aria-labelledby="haptonomie-heading" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
         <div className="container">
           <div className="columns is-vcentered">
             <div className="column is-6">
               <figure className="image" style={{ borderRadius: '12px', overflow: 'hidden' }}>
                 <img
                   src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80"
-                  alt="Haptonomie"
+                  alt="Haptonomie - Einfühlsame Berührung und Verbindung"
                   style={{ objectFit: 'cover', width: '100%', height: '500px' }}
                 />
               </figure>
@@ -49,10 +49,10 @@ const Haptonomie = () => {
                 marginBottom: '1rem',
                 textTransform: 'uppercase',
                 letterSpacing: '1px'
-              }}>
+              }} aria-label="Seitenbereich">
                 Was ist Haptonomie?
               </p>
-              <h2 className="title" style={{
+              <h2 id="haptonomie-heading" className="title" style={{
                 fontSize: '2.5rem',
                 color: 'var(--color-heading)',
                 marginBottom: '2rem',
@@ -78,6 +78,7 @@ const Haptonomie = () => {
                 <a
                   href="#kontakt"
                   className="button is-medium"
+                  aria-label="Kontakt für Haptonomie-Sitzungen aufnehmen"
                   style={{
                     backgroundColor: 'var(--color-yellow-green)',
                     color: 'white',
@@ -96,10 +97,10 @@ const Haptonomie = () => {
       </section>
 
       {/* Applications Grid */}
-      <section className="section" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+      <section className="section" aria-labelledby="applications-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
         <div className="container">
           <div className="has-text-centered mb-6">
-            <h2 className="title" style={{
+            <h2 id="applications-heading" className="title" style={{
               fontSize: '2.5rem',
               color: 'var(--color-heading)',
               marginBottom: '1rem'
@@ -119,7 +120,7 @@ const Haptonomie = () => {
           <div className="columns is-multiline">
             {applications.map((app, index) => (
               <div key={index} className="column is-6">
-                <div className="box" style={{
+                <article className="box" style={{
                   height: '100%',
                   padding: '0',
                   borderRadius: '12px',
@@ -130,7 +131,7 @@ const Haptonomie = () => {
                   <figure className="image">
                     <img
                       src={app.image}
-                      alt={app.title}
+                      alt={`${app.title} - ${app.subtitle}`}
                       style={{ objectFit: 'cover', width: '100%', height: '250px' }}
                     />
                   </figure>
@@ -156,7 +157,7 @@ const Haptonomie = () => {
                       {app.description}
                     </p>
                   </div>
-                </div>
+                </article>
               </div>
             ))}
           </div>

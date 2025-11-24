@@ -28,7 +28,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="kontakt" className="section" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
+    <section id="kontakt" className="section" aria-labelledby="contact-heading" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
       <div className="container">
         <div className="columns">
           <div className="column is-5">
@@ -39,10 +39,10 @@ const Contact = () => {
               marginBottom: '1rem',
               textTransform: 'uppercase',
               letterSpacing: '1px'
-            }}>
+            }} aria-label="Seitenbereich">
               Kontakt
             </p>
-            <h2 className="title" style={{
+            <h2 id="contact-heading" className="title" style={{
               fontSize: '2.5rem',
               color: 'var(--color-heading)',
               marginBottom: '2rem',
@@ -83,11 +83,14 @@ const Contact = () => {
               <h3 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
                 Kontaktformular
               </h3>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} aria-label="Kontaktformular">
                 <div className="field">
-                  <label className="label" style={{ color: 'var(--color-heading)' }}>Name *</label>
+                  <label htmlFor="contact-name" className="label" style={{ color: 'var(--color-heading)' }}>
+                    Name <span aria-label="Pflichtfeld">*</span>
+                  </label>
                   <div className="control">
                     <input
+                      id="contact-name"
                       className="input"
                       type="text"
                       name="name"
@@ -95,6 +98,8 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      aria-required="true"
+                      aria-describedby="name-help"
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
@@ -104,13 +109,17 @@ const Contact = () => {
                         colorScheme: 'light'
                       }}
                     />
+                    <span id="name-help" className="sr-only">Bitte geben Sie Ihren Namen ein</span>
                   </div>
                 </div>
 
                 <div className="field">
-                  <label className="label" style={{ color: 'var(--color-heading)' }}>E-Mail *</label>
+                  <label htmlFor="contact-email" className="label" style={{ color: 'var(--color-heading)' }}>
+                    E-Mail <span aria-label="Pflichtfeld">*</span>
+                  </label>
                   <div className="control">
                     <input
+                      id="contact-email"
                       className="input"
                       type="email"
                       name="email"
@@ -118,6 +127,8 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      aria-required="true"
+                      aria-describedby="email-help"
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
@@ -127,19 +138,22 @@ const Contact = () => {
                         colorScheme: 'light'
                       }}
                     />
+                    <span id="email-help" className="sr-only">Bitte geben Sie Ihre E-Mail-Adresse ein</span>
                   </div>
                 </div>
 
                 <div className="field">
-                  <label className="label" style={{ color: 'var(--color-heading)' }}>Betreff</label>
+                  <label htmlFor="contact-subject" className="label" style={{ color: 'var(--color-heading)' }}>Betreff</label>
                   <div className="control">
                     <input
+                      id="contact-subject"
                       className="input"
                       type="text"
                       name="subject"
                       placeholder="Betreff Ihrer Nachricht"
                       value={formData.subject}
                       onChange={handleChange}
+                      aria-describedby="subject-help"
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
@@ -149,13 +163,17 @@ const Contact = () => {
                         colorScheme: 'light'
                       }}
                     />
+                    <span id="subject-help" className="sr-only">Optional: Betreff Ihrer Anfrage</span>
                   </div>
                 </div>
 
                 <div className="field">
-                  <label className="label" style={{ color: 'var(--color-heading)' }}>Nachricht *</label>
+                  <label htmlFor="contact-message" className="label" style={{ color: 'var(--color-heading)' }}>
+                    Nachricht <span aria-label="Pflichtfeld">*</span>
+                  </label>
                   <div className="control">
                     <textarea
+                      id="contact-message"
                       className="textarea"
                       name="message"
                       placeholder="Ihre Nachricht an mich..."
@@ -163,6 +181,8 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      aria-required="true"
+                      aria-describedby="message-help"
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
@@ -172,6 +192,7 @@ const Contact = () => {
                         colorScheme: 'light'
                       }}
                     />
+                    <span id="message-help" className="sr-only">Bitte geben Sie Ihre Nachricht ein</span>
                   </div>
                 </div>
 
