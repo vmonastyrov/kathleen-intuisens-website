@@ -1,0 +1,64 @@
+name: Deploy Preview
+
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Get branch name
+        id: branch
+        run: |
+          # Получаем имя ветки и очищаем от недопустимых символов
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          SAFE_BRANCH_NAME=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g')
+          echo "name=$SAFE_BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Deploying preview for branch: $SAFE_BRANCH_NAME"
+
+      - name: Build with preview base path
+        run: bun run build
+        env:
+          VITE_BASE_PATH: /kathleen-intuisens-website/preview/${{ steps.branch.outputs.name }}/
+
+      - name: Deploy to GitHub Pages (Preview)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          destination_dir: preview/${{ steps.branch.outputs.name }}
+          keep_files: true
+          commit_message: "Deploy preview for ${{ steps.branch.outputs.name }}"
+
+      - name: Comment preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branchName = '${{ steps.branch.outputs.name }}';
+            const previewUrl = `https://vmonastyrov.github.io/kathleen-intuisens-website/preview/${branchName}/`;
+
+            console.log(`Preview deployed at: ${previewUrl}`);
+
+            // Можно добавить комментарий в PR, если это PR
+            if (context.payload.pull_request) {
+              github.rest.issues.createComment({
+                issue_number: context.payload.pull_request.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `🚀 Preview deployed!\n\n**Preview URL:** ${previewUrl}\n\n*Branch: \`${branchName}\`*`
+              });
+            }
