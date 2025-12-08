@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logo from '../assets/photo_2025-10-15_23-36-2.jpg'
+import logo from '../assets/logo.png'
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false)
@@ -9,12 +9,12 @@ const Header = () => {
       {/* Logo positioned absolutely */}
       <a href="/" aria-label="IntuiSens Homepage" style={{
         position: 'absolute',
-        top: '0.5rem',
-        left: '8rem',
+        top: '1rem',
+        left: '2rem',
         zIndex: 100,
         display: 'block'
       }}>
-        <img src={logo} alt="IntuiSens Logo - Berühren berührt" style={{ height: '180px', width: '180px', objectFit: 'contain' }} />
+        <img src={logo} alt="IntuiSens Logo - Berühren berührt" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
       </a>
 
       <nav className="navbar is-light" role="navigation" aria-label="main navigation" style={{ padding: '1rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', backgroundColor: 'var(--color-bg-main)' }}>
