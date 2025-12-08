@@ -15,7 +15,7 @@ const About = () => {
           <div className="column is-6 is-offset-1">
             <p style={{
               fontSize: '1.1rem',
-              color: 'var(--color-gold)',
+              color: 'var(--color-accent)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',
@@ -39,7 +39,7 @@ const About = () => {
             }}>
               Navanita K. Manke
             </h3>
-            <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555' }}>
+            <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--color-text)' }}>
               <p style={{ marginBottom: '1.5rem' }}>
                 Der verbindende rote Faden meiner 35 Jahre als Trainerin, Hebamme, Heilpraktikerin für Psychotherapie
                 und Intensivkrankenschwester ist die <strong>Haptonomie nach Frans Veldman jr.</strong>
@@ -61,8 +61,8 @@ const About = () => {
                 className="button is-medium"
                 aria-label="Kontakt mit Navanita K. Manke aufnehmen"
                 style={{
-                  backgroundColor: 'var(--color-yellow-green)',
-                  color: 'white',
+                  backgroundColor: 'var(--color-button)',
+                  color: 'var(--color-button-text)',
                   border: 'none',
                   fontWeight: 600,
                   borderRadius: '8px'

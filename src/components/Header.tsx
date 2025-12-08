@@ -17,7 +17,7 @@ const Header = () => {
         <img src={logo} alt="IntuiSens Logo - Berühren berührt" style={{ height: '180px', width: '180px', objectFit: 'contain' }} />
       </a>
 
-      <nav className="navbar is-white" role="navigation" aria-label="main navigation" style={{ padding: '1rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', backgroundColor: 'white' }}>
+      <nav className="navbar is-light" role="navigation" aria-label="main navigation" style={{ padding: '1rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', backgroundColor: 'var(--color-bg-main)' }}>
         <div className="container">
           <div className="navbar-brand">
             {/* Empty space for logo */}

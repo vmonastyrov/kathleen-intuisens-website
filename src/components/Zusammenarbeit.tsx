@@ -1,6 +1,6 @@
 const Zusammenarbeit = () => {
   return (
-    <section id="zusammenarbeit" className="section" aria-labelledby="zusammenarbeit-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+    <section id="zusammenarbeit" className="section" aria-labelledby="zusammenarbeit-heading" style={{ backgroundColor: 'var(--color-bg-main)', padding: '5rem 1.5rem' }}>
       <div className="container">
         <div className="columns is-vcentered">
           <div className="column is-6">
@@ -15,7 +15,7 @@ const Zusammenarbeit = () => {
           <div className="column is-5 is-offset-1">
             <p style={{
               fontSize: '1.1rem',
-              color: 'var(--color-gold)',
+              color: 'var(--color-accent)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',
@@ -31,7 +31,7 @@ const Zusammenarbeit = () => {
             }}>
               Zusammenarbeit mit Hochschulen
             </h2>
-            <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555' }}>
+            <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--color-text)' }}>
               <p style={{ marginBottom: '1.5rem' }}>
                 Die IntuiSens-Module ermöglichen es Hochschulen, sich in der Hebammenausbildung als
                 <strong> integrativer, innovativer Anbieter</strong> zu präsentieren.
@@ -49,8 +49,8 @@ const Zusammenarbeit = () => {
                 className="button is-large"
                 aria-label="Kontakt für Hochschul-Kooperation aufnehmen"
                 style={{
-                  backgroundColor: 'var(--color-yellow-green)',
-                  color: 'white',
+                  backgroundColor: 'var(--color-button)',
+                  color: 'var(--color-button-text)',
                   border: 'none',
                   fontWeight: 600,
                   borderRadius: '8px'

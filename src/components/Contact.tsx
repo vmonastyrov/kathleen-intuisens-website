@@ -34,7 +34,7 @@ const Contact = () => {
           <div className="column is-5">
             <p style={{
               fontSize: '1.1rem',
-              color: 'var(--color-gold)',
+              color: 'var(--color-accent)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',
@@ -50,7 +50,7 @@ const Contact = () => {
             }}>
               Ich freue mich auf Ihre Nachricht
             </h2>
-            <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555' }}>
+            <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--color-text)' }}>
               <p style={{ marginBottom: '2rem' }}>
                 Rufen Sie mich gerne an oder schreiben Sie mir eine Mail. Ich freue mich auf den Austausch mit Ihnen!
               </p>
@@ -61,7 +61,7 @@ const Contact = () => {
                 </h4>
                 <p style={{ marginBottom: '1rem' }}>
                   <strong>Telefon:</strong> <a href="tel:+4916022726724" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>+49 160 22 726 724</a><br />
-                  <span style={{ fontSize: '0.95rem', color: '#777' }}>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--color-text-light)' }}>
                     Telefonisch erreichbar Mo–Fr 8–9 Uhr<br />
                     Rückruf innerhalb von 48 Std. bei Nachricht auf AB
                   </span>
@@ -103,7 +103,7 @@ const Contact = () => {
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
-                        color: '#363636',
+                        color: 'var(--color-text)',
                         WebkitAppearance: 'none',
                         appearance: 'none',
                         colorScheme: 'light'
@@ -132,7 +132,7 @@ const Contact = () => {
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
-                        color: '#363636',
+                        color: 'var(--color-text)',
                         WebkitAppearance: 'none',
                         appearance: 'none',
                         colorScheme: 'light'
@@ -157,7 +157,7 @@ const Contact = () => {
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
-                        color: '#363636',
+                        color: 'var(--color-text)',
                         WebkitAppearance: 'none',
                         appearance: 'none',
                         colorScheme: 'light'
@@ -186,7 +186,7 @@ const Contact = () => {
                       style={{
                         borderColor: 'var(--color-divider)',
                         backgroundColor: 'white',
-                        color: '#363636',
+                        color: 'var(--color-text)',
                         WebkitAppearance: 'none',
                         appearance: 'none',
                         colorScheme: 'light'
@@ -202,8 +202,8 @@ const Contact = () => {
                       type="submit"
                       className="button is-large is-fullwidth"
                       style={{
-                        backgroundColor: 'var(--color-yellow-green)',
-                        color: 'white',
+                        backgroundColor: 'var(--color-button)',
+                        color: 'var(--color-button-text)',
                         border: 'none',
                         fontWeight: 600,
                         borderRadius: '8px'
@@ -212,7 +212,7 @@ const Contact = () => {
                       Nachricht senden
                     </button>
                   </div>
-                  <p style={{ fontSize: '0.9rem', color: '#777', marginTop: '1rem' }}>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '1rem' }}>
                     * Pflichtfelder. Ihre Nachricht wird in Ihrem E-Mail-Programm geöffnet.
                   </p>
                 </div>

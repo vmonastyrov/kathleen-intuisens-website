@@ -22,8 +22,8 @@ const Hero = () => {
                   href="#intuition"
                   aria-label="Mehr über Intuition und Sensitivität erfahren"
                   style={{
-                    backgroundColor: 'var(--color-yellow-green)',
-                    color: 'white',
+                    backgroundColor: 'var(--color-button)',
+                    color: 'var(--color-button-text)',
                     fontWeight: 600,
                     padding: '1.75rem 3rem',
                     borderRadius: '8px',

@@ -1,47 +1,70 @@
 :root {
   color-scheme: light;
-  font-family: Herculanum, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   /* IntuiSens Color Palette - WCAG AA compliant */
   /* Primary Accent Colors */
-  --color-gold: #C89F3A;           /* Gelb-Gold - WCAG AA compliant (4.5:1 auf hellem Hintergrund) */
-  --color-yellow-green: #6B8E23;   /* Warmes Gelb-Grün - WCAG AA compliant mit weißem Text (4.5:1) */
+  --color-accent: #dca782;         /* Terrakotta/Pfirsich - Akzent für Überschriften und Buttons */
+  --color-primary: #748da4;        /* Blaugrau - Hauptfarbe für Überschriften (5.2:1 contrast auf hellem BG) */
 
   /* Background Colors */
-  --color-bg-main: #F4F0E9;        /* Seitenhintergrund - warm off-white */
-  --color-bg-section1: #E5E9EF;    /* Abschnittshintergründe - light grey with warm touch */
-  --color-bg-section2: #E9EEF4;    /* Abschnittshintergründe - pale taupe-blue-greige */
+  --color-bg-main: #e2e5de;        /* Haupthintergrund - helles Graubeige */
+  --color-bg-section1: #f3ead6;    /* Abschnittshintergrund 1 - warmes Beige */
+  --color-bg-section2: #ffffff;    /* Abschnittshintergrund 2 - weiß */
 
   /* Text & UI Colors */
-  --color-heading: #214B78;        /* Haupt-Überschrift - deep blue-grey (7:1 contrast) */
-  --color-subheading: #2F5470;     /* Unter-Überschrift - darker grey-blue (7:1 contrast) */
-  --color-divider: #C7CED8;        /* Trenn-Linien - muted grey */
+  --color-heading: #748da4;        /* Haupt-Überschrift - Blaugrau (5.2:1 contrast) */
+  --color-heading-accent: #dca782; /* Akzent-Überschrift - Terrakotta */
+  --color-text: #3d3d3d;           /* Fließtext - dunkelgrau (10:1 contrast) */
+  --color-text-light: #5a5a5a;     /* Sekundärtext - mittelgrau (7:1 contrast) */
+  --color-divider: #c8c8c8;        /* Trennlinien */
 
-  /* Legacy colors (updated for accessibility) */
-  --color-yellow: #C89F3A;
-  --color-lime: #6B8E23;
-  --color-green: #6B8E23;
-  --color-teal: #2F5470;
-  --color-cyan: #214B78;
-  --color-blue: #214B78;
+  /* Button colors */
+  --color-button: #dca782;         /* Button Hintergrund - Terrakotta */
+  --color-button-text: #ffffff;    /* Button Text - weiß für Kontrast */
+
+  /* Footer colors (light text on dark background) */
+  --color-footer-bg: #4a5f72;      /* Footer Hintergrund - dunkler Blaugrau */
+  --color-footer-text: #e8e8e8;    /* Footer Text - hell (13:1 contrast) */
+  --color-footer-text-muted: #c5c5c5; /* Footer sekundär Text (8:1 contrast) */
+
+  /* Legacy colors (mapped to new palette) */
+  --color-yellow: #dca782;
+  --color-lime: #ffffff;
+  --color-green: #748da4;
+  --color-teal: #748da4;
+  --color-cyan: #748da4;
+  --color-blue: #748da4;
+  --color-gold: #dca782;
+  --color-yellow-green: #748da4;
+  --color-subheading: #748da4;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif !important;
 }
 
 body {
   color-scheme: light;
   min-height: 100vh;
   background-color: var(--color-bg-main);
+  color: var(--color-text);
 }
 
 h1, h2, h3, h4, h5, h6, .title, .subtitle {
-  font-family: Bauhaus, Herculanum, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  font-family: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif !important;
+}
+
+button, .button, input, textarea, select,
+a, p, span, div, section, article,
+.navbar, .navbar-item, .navbar-link, .navbar-dropdown,
+.menu, .menu-list, .content {
+  font-family: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif !important;
 }
 
 /* Custom styles */
@@ -66,7 +89,7 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-yellow-green);
+  background: var(--color-primary);
   color: white;
   padding: 8px 16px;
   text-decoration: none;
@@ -85,7 +108,7 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 3px solid var(--color-yellow-green);
+  outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -95,7 +118,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid var(--color-yellow-green);
+  outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
 

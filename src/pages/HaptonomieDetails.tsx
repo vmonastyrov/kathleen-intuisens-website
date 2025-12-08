@@ -19,7 +19,7 @@ const HaptonomieDetails = () => {
             Mehr über Haptonomie
           </h1>
 
-          <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555' }}>
+          <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--color-text)' }}>
             <p style={{ marginBottom: '1.5rem' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Haptonomie nach Frans Veldman jr.
               ist eine tiefgreifende Methode der Berührung und Begleitung. Sed do eiusmod tempor incididunt
@@ -60,7 +60,7 @@ const HaptonomieDetails = () => {
                 to="/#kontakt"
                 className="button is-medium"
                 style={{
-                  backgroundColor: 'var(--color-gold)',
+                  backgroundColor: 'var(--color-button)',
                   color: 'var(--color-heading)',
                   border: 'none',
                   fontWeight: 600,

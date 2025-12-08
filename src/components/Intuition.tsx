@@ -23,12 +23,12 @@ const Intuition = () => {
   ]
 
   return (
-    <section id="intuition" className="section" aria-labelledby="intuition-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+    <section id="intuition" className="section" aria-labelledby="intuition-heading" style={{ backgroundColor: 'var(--color-bg-main)', padding: '5rem 1.5rem' }}>
       <div className="container">
         <div className="has-text-centered mb-6">
           <p style={{
             fontSize: '1.1rem',
-            color: 'var(--color-gold)',
+            color: 'var(--color-accent)',
             fontWeight: 600,
             marginBottom: '1rem',
             textTransform: 'uppercase',
@@ -48,7 +48,7 @@ const Intuition = () => {
           </h2>
           <p style={{
             fontSize: '1.1rem',
-            color: '#555',
+            color: 'var(--color-text)',
             lineHeight: '1.8',
             maxWidth: '900px',
             margin: '0 auto 3rem'
@@ -57,7 +57,7 @@ const Intuition = () => {
           </p>
           <p style={{
             fontSize: '1.1rem',
-            color: '#555',
+            color: 'var(--color-text)',
             lineHeight: '1.8',
             maxWidth: '900px',
             margin: '0 auto 3rem'
@@ -100,7 +100,7 @@ const Intuition = () => {
                 </h4>
                 <p style={{
                   fontSize: '1rem',
-                  color: '#666',
+                  color: 'var(--color-text-light)',
                   lineHeight: '1.6'
                 }}>
                   {method.description}
@@ -119,7 +119,7 @@ const Intuition = () => {
           <p className="title is-5" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
             Kompakt eingebettet sind aktuelle Erkenntnisse der
           </p>
-          <div className="content" style={{ fontSize: '1.05rem', color: '#555', lineHeight: '2' }}>
+          <div className="content" style={{ fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '2' }}>
             <ul>
               <li>körperbasierten Psychotherapie</li>
               <li>prä- und perinatalen Psychologie, klinische Psychologie, Verhaltenspsychologie</li>

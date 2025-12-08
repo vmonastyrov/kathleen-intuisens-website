@@ -38,7 +38,7 @@ const Modules = () => {
         <div className="has-text-centered mb-6">
           <p style={{
             fontSize: '1.1rem',
-            color: 'var(--color-gold)',
+            color: 'var(--color-accent)',
             fontWeight: 600,
             marginBottom: '1rem',
             textTransform: 'uppercase',
@@ -70,7 +70,7 @@ const Modules = () => {
                 width: '80px',
                 height: '80px',
                 borderRadius: '50%',
-                backgroundColor: 'var(--color-gold)',
+                backgroundColor: 'var(--color-button)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -89,11 +89,11 @@ const Modules = () => {
               <p className="subtitle is-5" style={{ color: 'var(--color-subheading)', marginBottom: '1.5rem' }}>
                 Berührung – Beziehung – Präsenz
               </p>
-              <p style={{ fontSize: '1.1rem', color: '#666', lineHeight: '1.8', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '1.1rem', color: 'var(--color-text-light)', lineHeight: '1.8', marginBottom: '1rem' }}>
                 <strong>Zentrale Kompetenzen im Hebammenberuf:</strong> Praxisnahes Wissen und verkörperte Erfahrung
                 in der Haptonomie und Achtsamkeit
               </p>
-              <p style={{ fontSize: '1rem', color: '#888' }}>
+              <p style={{ fontSize: '1rem', color: 'var(--color-text-light)' }}>
                 Abhängig von den Ressourcen als 3-tägiges „Basis-Intensivseminar" oder 1-tägiges
                 „Basis-Einführungsseminar" mit Teilnahmebescheinigung
               </p>
@@ -106,7 +106,7 @@ const Modules = () => {
           <h3 className="title is-4 has-text-centered" style={{ color: 'var(--color-heading)', marginBottom: '2rem' }}>
             Die Aufbau-Module
           </h3>
-          <p className="has-text-centered" style={{ fontSize: '1.1rem', color: '#666', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
+          <p className="has-text-centered" style={{ fontSize: '1.1rem', color: 'var(--color-text-light)', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
             6 Module sind im Baukastensystem einzeln buchbar. Optimalerweise ein Modul je Semester.
             Dauer jeweils 5-tägig plus Selbststudium und Portfolioarbeit mit Zertifikat, optional curricular integrierbar, 1 ECTS-Punkt je Modul.
           </p>
@@ -128,14 +128,14 @@ const Modules = () => {
                   width: '50px',
                   height: '50px',
                   borderRadius: '8px',
-                  backgroundColor: 'var(--color-yellow-green)',
+                  backgroundColor: 'var(--color-button)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1.5rem',
                   fontSize: '1.5rem',
                   fontWeight: 700,
-                  color: 'white'
+                  color: 'var(--color-button-text)'
                 }}>
                   {module.number}
                 </div>
@@ -150,7 +150,7 @@ const Modules = () => {
                   {module.topics.map((topic, idx) => (
                     <li key={idx} style={{
                       fontSize: '0.95rem',
-                      color: '#666',
+                      color: 'var(--color-text-light)',
                       marginBottom: '0.75rem',
                       paddingLeft: '1.5rem',
                       position: 'relative'
@@ -183,7 +183,7 @@ const Modules = () => {
               <h4 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
                 Methodik
               </h4>
-              <ul style={{ fontSize: '1.05rem', color: '#555', lineHeight: '2' }}>
+              <ul style={{ fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '2' }}>
                 <li>Praxisübungen in Einzel-, Paar- und Gruppenarbeit</li>
                 <li>Selbsterfahrung und Reflexion</li>
                 <li>Anleitung, kollegiale Beratung, Supervision</li>
@@ -202,7 +202,7 @@ const Modules = () => {
               <h4 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
                 Qualitätssicherung
               </h4>
-              <ul style={{ fontSize: '1.05rem', color: '#555', lineHeight: '2' }}>
+              <ul style={{ fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '2' }}>
                 <li>Portfolioarbeit: schriftliche Reflexion und Dokumentation</li>
                 <li>Praktische Demonstration gewählter Methoden</li>
                 <li>Selbststudium/Literaturarbeit</li>

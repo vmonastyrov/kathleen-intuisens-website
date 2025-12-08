@@ -44,7 +44,7 @@ const Haptonomie = () => {
             <div className="column is-5 is-offset-1">
               <p style={{
                 fontSize: '1.1rem',
-                color: 'var(--color-gold)',
+                color: 'var(--color-accent)',
                 fontWeight: 600,
                 marginBottom: '1rem',
                 textTransform: 'uppercase',
@@ -60,7 +60,7 @@ const Haptonomie = () => {
               }}>
                 Ich fühle · ich bin · richtig · wie ich bin
               </h2>
-              <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555' }}>
+              <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--color-text)' }}>
                 <p style={{ marginBottom: '1.5rem' }}>
                   Haptonomie – die Kraft der einfühlsamen Berührung stärkt Vertrauen, Geborgenheit und innere Ruhe.
                   Sie öffnet den Raum für echte Begegnung mit uns selbst und anderen.
@@ -80,8 +80,8 @@ const Haptonomie = () => {
                   className="button is-medium"
                   aria-label="Kontakt für Haptonomie-Sitzungen aufnehmen"
                   style={{
-                    backgroundColor: 'var(--color-yellow-green)',
-                    color: 'white',
+                    backgroundColor: 'var(--color-button)',
+                    color: 'var(--color-button-text)',
                     border: 'none',
                     fontWeight: 600,
                     borderRadius: '8px',
@@ -97,7 +97,7 @@ const Haptonomie = () => {
       </section>
 
       {/* Applications Grid */}
-      <section className="section" aria-labelledby="applications-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+      <section className="section" aria-labelledby="applications-heading" style={{ backgroundColor: 'var(--color-bg-main)', padding: '5rem 1.5rem' }}>
         <div className="container">
           <div className="has-text-centered mb-6">
             <h2 id="applications-heading" className="title" style={{
@@ -109,7 +109,7 @@ const Haptonomie = () => {
             </h2>
             <p className="subtitle" style={{
               fontSize: '1.2rem',
-              color: '#666',
+              color: 'var(--color-text-light)',
               maxWidth: '800px',
               margin: '0 auto'
             }}>
@@ -144,14 +144,14 @@ const Haptonomie = () => {
                     </h3>
                     <p style={{
                       fontSize: '0.95rem',
-                      color: 'var(--color-gold)',
+                      color: 'var(--color-accent)',
                       marginBottom: '1rem'
                     }}>
                       {app.subtitle}
                     </p>
                     <p style={{
                       fontSize: '1rem',
-                      color: '#666',
+                      color: 'var(--color-text-light)',
                       lineHeight: '1.7'
                     }}>
                       {app.description}
@@ -172,7 +172,7 @@ const Haptonomie = () => {
             <h3 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
               Wie läuft eine Haptonomie-Sitzung ab?
             </h3>
-            <div className="content" style={{ fontSize: '1.05rem', color: '#555', lineHeight: '1.8' }}>
+            <div className="content" style={{ fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '1.8' }}>
               <p>
                 Eine Sitzung dauert 20–75 Minuten und beginnt mit einem kurzen Vorgespräch, in dem das Anliegen
                 geklärt wird. Die haptonomische Arbeit findet meist auf einer Matte, liegend oder halbsitzend, statt.
