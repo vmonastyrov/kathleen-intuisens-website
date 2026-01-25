@@ -37,8 +37,8 @@ const Modules = () => {
       <div className="container">
         <div className="has-text-centered mb-6">
           <p style={{
-            fontSize: '1.1rem',
-            color: 'var(--color-gold)',
+            fontSize: '1.75rem',
+            color: 'var(--color-yellow-green)',
             fontWeight: 600,
             marginBottom: '1rem',
             textTransform: 'uppercase',
@@ -175,7 +175,7 @@ const Modules = () => {
           <div className="column is-6">
             <div className="box" style={{
               height: '100%',
-              backgroundColor: 'var(--color-bg-section2)',
+              backgroundColor: '#C7CED8',
               border: 'none',
               borderRadius: '12px',
               padding: '2.5rem'
@@ -194,7 +194,7 @@ const Modules = () => {
           <div className="column is-6">
             <div className="box" style={{
               height: '100%',
-              backgroundColor: 'var(--color-bg-section2)',
+              backgroundColor: '#C7CED8',
               border: 'none',
               borderRadius: '12px',
               padding: '2.5rem'

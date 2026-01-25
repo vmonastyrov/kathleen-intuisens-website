@@ -4,26 +4,29 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* IntuiSens Color Palette - WCAG AA compliant */
+  /* IntuiSens Color Palette */
   /* Primary Accent Colors */
-  --color-gold: #C89F3A;           /* Gelb-Gold - WCAG AA compliant (4.5:1 auf hellem Hintergrund) */
-  --color-yellow-green: #6B8E23;   /* Warmes Gelb-Grün - WCAG AA compliant mit weißem Text (4.5:1) */
+  --color-gold: #FCC741;           /* Gelb-Gold - für Logo, CTA, Textzeilen, Boxen, Icons */
+  --color-gold-light: #FDD87A;     /* Gelb-Gold 30% heller */
+  --color-gold-lighter: #FEE9B3;   /* Gelb-Gold 60% heller */
+  --color-yellow-green: #95B467;   /* Warmes Gelb-Grün - für Icons, Bullets, Links, Buttons */
+  --color-yellow-green-light: #B5CB95; /* Gelb-Grün 30% heller */
 
   /* Background Colors */
-  --color-bg-main: #F4F0E9;        /* Seitenhintergrund - warm off-white */
-  --color-bg-section1: #E5E9EF;    /* Abschnittshintergründe - light grey with warm touch */
-  --color-bg-section2: #E9EEF4;    /* Abschnittshintergründe - pale taupe-blue-greige */
+  --color-bg-main: #F4F0E9;        /* Seitenhintergrund - weiches warmes Off-White */
+  --color-bg-section1: #E5E9EF;    /* Abschnittshintergründe1 - Hell-Graumilieu mit warmem Stich */
+  --color-bg-section2: #E9EEF4;    /* Abschnittshintergründe2 - Blasses Taupe-Blau-Greige */
 
   /* Text & UI Colors */
-  --color-heading: #214B78;        /* Haupt-Überschrift - deep blue-grey (7:1 contrast) */
-  --color-subheading: #2F5470;     /* Unter-Überschrift - darker grey-blue (7:1 contrast) */
-  --color-divider: #C7CED8;        /* Trenn-Linien - muted grey */
+  --color-heading: #214B78;        /* Haupt-Überschrift - Tiefes Blau-Grau-Blau */
+  --color-subheading: #4A6D8F;     /* Unter-Überschrift/Untertitel - Graublau */
+  --color-divider: #C7CED8;        /* Dezente Trenn-Linien - Gedämpftes Grau */
 
-  /* Legacy colors (updated for accessibility) */
-  --color-yellow: #C89F3A;
-  --color-lime: #6B8E23;
-  --color-green: #6B8E23;
-  --color-teal: #2F5470;
+  /* Legacy colors */
+  --color-yellow: #FCC741;
+  --color-lime: #95B467;
+  --color-green: #95B467;
+  --color-teal: #4A6D8F;
   --color-cyan: #214B78;
   --color-blue: #214B78;
 }

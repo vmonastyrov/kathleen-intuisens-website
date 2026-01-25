@@ -33,8 +33,8 @@ const Contact = () => {
         <div className="columns">
           <div className="column is-5">
             <p style={{
-              fontSize: '1.1rem',
-              color: 'var(--color-gold)',
+              fontSize: '1.75rem',
+              color: 'var(--color-yellow-green)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',

@@ -16,8 +16,8 @@ const About = () => {
           </div>
           <div className="column is-6 is-offset-1">
             <p style={{
-              fontSize: '1.1rem',
-              color: 'var(--color-gold)',
+              fontSize: '1.75rem',
+              color: 'var(--color-yellow-green)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',

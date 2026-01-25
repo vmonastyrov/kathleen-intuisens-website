@@ -132,8 +132,8 @@ const Intuition = () => {
       <div className="container">
         <div className="has-text-centered mb-6">
           <p style={{
-            fontSize: '1.1rem',
-            color: 'var(--color-gold)',
+            fontSize: '1.75rem',
+            color: 'var(--color-yellow-green)',
             fontWeight: 600,
             marginBottom: '1rem',
             textTransform: 'uppercase',
@@ -188,7 +188,7 @@ const Intuition = () => {
                 padding: '2.5rem 2rem',
                 borderRadius: '12px',
                 border: expandedMethod === method.id ? `2px solid ${techniqueDetails[method.id].color}` : '2px solid var(--color-divider)',
-                backgroundColor: expandedMethod === method.id ? `${techniqueDetails[method.id].color}10` : 'white',
+                backgroundColor: expandedMethod === method.id ? `${techniqueDetails[method.id].color}10` : '#F4F0E9',
                 textAlign: 'center',
                 transition: 'all 0.3s ease',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
@@ -303,10 +303,11 @@ const Intuition = () => {
         )}
 
         <div className="box mt-6" style={{
-          backgroundColor: 'var(--color-bg-section2)',
-          border: 'none',
+          backgroundColor: '#EBE7E0',
+          border: '2px solid var(--color-divider)',
           borderRadius: '12px',
-          padding: '2.5rem'
+          padding: '2.5rem',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
         }}>
           <p className="title is-5" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
             Kompakt eingebettet sind aktuelle Erkenntnisse der
