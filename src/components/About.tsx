@@ -1,3 +1,5 @@
+import mePhoto from '../assets/me.jpeg'
+
 const About = () => {
   return (
     <section id="about" className="section" aria-labelledby="about-heading" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
@@ -6,7 +8,7 @@ const About = () => {
           <div className="column is-5">
             <figure className="image" style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}>
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+                src={mePhoto}
                 alt="Professionelle Hebamme Navanita K. Manke"
                 style={{ objectFit: 'cover', width: '100%', height: '600px' }}
               />

@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section id="home" className="hero is-large" aria-labelledby="hero-title" style={{
+    <section id="home" className="hero is-medium" aria-labelledby="hero-title" style={{
       background: 'linear-gradient(135deg, rgba(74, 109, 143, 0.7) 0%, rgba(33, 75, 120, 0.8) 100%), url(https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=1920&q=80)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
