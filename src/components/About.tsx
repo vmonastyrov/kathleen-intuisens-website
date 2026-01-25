@@ -10,7 +10,7 @@ const About = () => {
               <img
                 src={mePhoto}
                 alt="Professionelle Hebamme Navanita K. Manke"
-                style={{ objectFit: 'cover', width: '100%', height: '600px' }}
+                style={{ width: '100%', height: 'auto' }}
               />
             </figure>
           </div>

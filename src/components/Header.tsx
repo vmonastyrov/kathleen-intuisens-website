@@ -33,7 +33,6 @@ const Header = () => {
             <a className="navbar-item" href="#home" aria-label="Zur Startseite" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Home</a>
             <a className="navbar-item" href="#about" aria-label="Über Navanita K. Manke" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Über mich</a>
             <a className="navbar-item" href="#intuition" aria-label="Zum Bereich Intuition und Sensitivität" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Intuition & Sensitivität</a>
-            <a className="navbar-item" href="#haptonomie" aria-label="Zum Bereich Haptonomie" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Haptonomie</a>
             <a className="navbar-item" href="#module" aria-label="Zu den Ausbildungsmodulen" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Module</a>
             <a className="navbar-item" href="#zusammenarbeit" aria-label="Zur Zusammenarbeit" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Zusammenarbeit</a>
             <a className="navbar-item" href="#kontakt" aria-label="Zum Kontaktformular" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Kontakt</a>

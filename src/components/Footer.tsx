@@ -49,13 +49,6 @@ const Footer = () => {
                   </a>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#haptonomie" aria-label="Zum Bereich Haptonomie" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                    Haptonomie
-                  </a>
-                </li>
-                <li style={{ marginBottom: '0.75rem' }}>
                   <a href="#module" aria-label="Zu den Ausbildungsmodulen" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
