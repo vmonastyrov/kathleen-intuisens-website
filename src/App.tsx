@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Intuition from './components/Intuition'
-import Haptonomie from './components/Haptonomie'
 import Modules from './components/Modules'
 import Zusammenarbeit from './components/Zusammenarbeit'
 import Contact from './components/Contact'
@@ -21,14 +20,19 @@ function App() {
         <meta property="og:type" content="website" />
       </Helmet>
 
+      <a href="#main-content" className="skip-to-content">
+        Zum Hauptinhalt springen
+      </a>
+
       <Header />
-      <Hero />
-      <About />
-      <Intuition />
-      <Haptonomie />
-      <Modules />
-      <Zusammenarbeit />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Intuition />
+        <Modules />
+        <Zusammenarbeit />
+        <Contact />
+      </main>
       <Footer />
     </>
   )

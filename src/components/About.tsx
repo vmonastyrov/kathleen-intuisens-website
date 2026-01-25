@@ -1,29 +1,31 @@
+import mePhoto from '../assets/me.jpeg'
+
 const About = () => {
   return (
-    <section id="about" className="section" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
+    <section id="about" className="section" aria-labelledby="about-heading" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
       <div className="container">
         <div className="columns is-vcentered">
           <div className="column is-5">
             <figure className="image" style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}>
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
-                alt="Navanita K. Manke"
-                style={{ objectFit: 'cover', width: '100%', height: '600px' }}
+                src={mePhoto}
+                alt="Professionelle Hebamme Navanita K. Manke"
+                style={{ width: '100%', height: 'auto' }}
               />
             </figure>
           </div>
           <div className="column is-6 is-offset-1">
             <p style={{
-              fontSize: '1.1rem',
-              color: 'var(--color-gold)',
+              fontSize: '1.75rem',
+              color: 'var(--color-yellow-green)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',
               letterSpacing: '1px'
-            }}>
+            }} aria-label="Seitenbereich">
               Über mich
             </p>
-            <h2 className="title" style={{
+            <h2 id="about-heading" className="title" style={{
               fontSize: '2.5rem',
               color: 'var(--color-heading)',
               marginBottom: '1.5rem',
@@ -59,6 +61,7 @@ const About = () => {
               <a
                 href="#kontakt"
                 className="button is-medium"
+                aria-label="Kontakt mit Navanita K. Manke aufnehmen"
                 style={{
                   backgroundColor: 'var(--color-yellow-green)',
                   color: 'white',

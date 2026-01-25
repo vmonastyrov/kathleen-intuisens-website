@@ -1,29 +1,29 @@
 const Zusammenarbeit = () => {
   return (
-    <section id="zusammenarbeit" className="section" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+    <section id="zusammenarbeit" className="section" aria-labelledby="zusammenarbeit-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
       <div className="container">
         <div className="columns is-vcentered">
           <div className="column is-6">
             <figure className="image" style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}>
               <img
                 src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
-                alt="Zusammenarbeit mit Hochschulen"
+                alt="Hochschul-Kooperation für Hebammenausbildung"
                 style={{ objectFit: 'cover', width: '100%', height: '500px', display: 'block' }}
               />
             </figure>
           </div>
           <div className="column is-5 is-offset-1">
             <p style={{
-              fontSize: '1.1rem',
-              color: 'var(--color-gold)',
+              fontSize: '1.75rem',
+              color: 'var(--color-yellow-green)',
               fontWeight: 600,
               marginBottom: '1rem',
               textTransform: 'uppercase',
               letterSpacing: '1px'
-            }}>
+            }} aria-label="Seitenbereich">
               Zusammenarbeit
             </p>
-            <h2 className="title" style={{
+            <h2 id="zusammenarbeit-heading" className="title" style={{
               fontSize: '2.5rem',
               color: 'var(--color-heading)',
               marginBottom: '2rem',
@@ -47,6 +47,7 @@ const Zusammenarbeit = () => {
               <a
                 href="#kontakt"
                 className="button is-large"
+                aria-label="Kontakt für Hochschul-Kooperation aufnehmen"
                 style={{
                   backgroundColor: 'var(--color-yellow-green)',
                   color: 'white',

@@ -1,25 +1,28 @@
 :root {
   color-scheme: light;
-  font-family: Herculanum, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   /* IntuiSens Color Palette */
   /* Primary Accent Colors */
-  --color-gold: #FCC741;           /* Gelb-Gold - einzelne Textzeilen, Linien, Icons, Hintergründe */
-  --color-yellow-green: #95B467;   /* Warmes Gelb-Grün - Links, Buttons, Bullets, Icons */
+  --color-gold: #FCC741;           /* Gelb-Gold - für Logo, CTA, Textzeilen, Boxen, Icons */
+  --color-gold-light: #FDD87A;     /* Gelb-Gold 30% heller */
+  --color-gold-lighter: #FEE9B3;   /* Gelb-Gold 60% heller */
+  --color-yellow-green: #95B467;   /* Warmes Gelb-Grün - für Icons, Bullets, Links, Buttons */
+  --color-yellow-green-light: #B5CB95; /* Gelb-Grün 30% heller */
 
   /* Background Colors */
-  --color-bg-main: #F4F0E9;        /* Seitenhintergrund - warm off-white */
-  --color-bg-section1: #E5E9EF;    /* Abschnittshintergründe - light grey with warm touch */
-  --color-bg-section2: #E9EEF4;    /* Abschnittshintergründe - pale taupe-blue-greige */
+  --color-bg-main: #F4F0E9;        /* Seitenhintergrund - weiches warmes Off-White */
+  --color-bg-section1: #E5E9EF;    /* Abschnittshintergründe1 - Hell-Graumilieu mit warmem Stich */
+  --color-bg-section2: #E9EEF4;    /* Abschnittshintergründe2 - Blasses Taupe-Blau-Greige */
 
   /* Text & UI Colors */
-  --color-heading: #214B78;        /* Haupt-Überschrift - deep blue-grey */
-  --color-subheading: #4A6D8F;     /* Unter-Überschrift - grey-blue */
-  --color-divider: #C7CED8;        /* Trenn-Linien - muted grey */
+  --color-heading: #214B78;        /* Haupt-Überschrift - Tiefes Blau-Grau-Blau */
+  --color-subheading: #4A6D8F;     /* Unter-Überschrift/Untertitel - Graublau */
+  --color-divider: #C7CED8;        /* Dezente Trenn-Linien - Gedämpftes Grau */
 
-  /* Legacy colors (for gradual migration) */
+  /* Legacy colors */
   --color-yellow: #FCC741;
   --color-lime: #95B467;
   --color-green: #95B467;
@@ -38,6 +41,7 @@ body {
   color-scheme: light;
   min-height: 100vh;
   background-color: var(--color-bg-main);
+  font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .title, .subtitle {
@@ -58,3 +62,73 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
     padding: 3rem 1.5rem;
   }
 }
+
+/* Accessibility Improvements */
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-yellow-green);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Enhanced focus indicators */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--color-yellow-green);
+  outline-offset: 2px;
+}
+
+/* Focus visible for modern browsers */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-yellow-green);
+  outline-offset: 2px;
+}
+
+/* Ensure interactive elements have hover states */
+a:hover,
+button:hover {
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+/* Improved link styles for better visibility */
+a {
+  transition: all 0.2s ease;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus within for form fields */
+.field:focus-within label {
+  color: var(--color-heading);
+  font-weight: 600;
