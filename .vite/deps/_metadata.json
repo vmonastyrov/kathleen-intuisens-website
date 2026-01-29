@@ -1,0 +1,37 @@
+{
+  "hash": "fb370d89",
+  "configHash": "31b83c57",
+  "lockfileHash": "52838dea",
+  "browserHash": "eb140302",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "0cd6b441",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "a14f7dfc",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "3fd1140e",
+      "needsInterop": true
+    },
+    "react-helmet-async": {
+      "src": "../../node_modules/react-helmet-async/lib/index.esm.js",
+      "file": "react-helmet-async.js",
+      "fileHash": "965e12d0",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-DFLZGPI3": {
+      "file": "chunk-DFLZGPI3.js"
+    }
+  }
+}

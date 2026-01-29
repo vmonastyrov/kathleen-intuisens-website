@@ -1,3 +1,20 @@
+/* Domine Font */
+@font-face {
+  font-family: 'Domine';
+  src: url('./assets/fonts/Domine-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Domine';
+  src: url('./assets/fonts/Domine-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -45,7 +62,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .title, .subtitle {
-  font-family: Bauhaus, Herculanum, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  font-family: 'Domine', Georgia, 'Times New Roman', serif !important;
 }
 
 /* Custom styles */
@@ -132,3 +149,4 @@ a {
 .field:focus-within label {
   color: var(--color-heading);
   font-weight: 600;
+}

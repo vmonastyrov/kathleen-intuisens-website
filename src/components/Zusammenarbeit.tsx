@@ -1,3 +1,5 @@
+import zusammenarbeitImg from '../assets/4.png'
+
 const Zusammenarbeit = () => {
   return (
     <section id="zusammenarbeit" className="section" aria-labelledby="zusammenarbeit-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
@@ -6,7 +8,7 @@ const Zusammenarbeit = () => {
           <div className="column is-6">
             <figure className="image" style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}>
               <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
+                src={zusammenarbeitImg}
                 alt="Hochschul-Kooperation für Hebammenausbildung"
                 style={{ objectFit: 'cover', width: '100%', height: '500px', display: 'block' }}
               />
