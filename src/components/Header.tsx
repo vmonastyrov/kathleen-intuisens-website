@@ -1,15 +1,34 @@
 import { useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const scrollToSection = (sectionId: string) => {
+    setIsActive(false)
+
+    // If not on home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        element?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      const element = document.getElementById(sectionId)
+      element?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
       <nav className="navbar is-white" role="navigation" aria-label="main navigation" style={{ padding: '0.5rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', backgroundColor: 'white' }}>
         <div className="container">
           <div className="navbar-brand">
-            <a className="navbar-item" href="/" aria-label="IntuiSens Homepage">
+            <a className="navbar-item" href="#/" aria-label="IntuiSens Homepage" onClick={() => setIsActive(false)}>
               <img src={logo} alt="IntuiSens Logo - Berühren berührt" style={{ height: '80px', maxHeight: '80px' }} />
             </a>
 
@@ -30,12 +49,12 @@ const Header = () => {
 
           <div id="navbar-menu" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
             <div className="navbar-start">
-            <a className="navbar-item" href="#home" aria-label="Zur Startseite" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Home</a>
-            <a className="navbar-item" href="#about" aria-label="Über Navanita K. Manke" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Über mich</a>
-            <a className="navbar-item" href="#intuition" aria-label="Zum Bereich Intuition und Sensitivität" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Intuition & Sensitivität</a>
-            <a className="navbar-item" href="#module" aria-label="Zu den Ausbildungsmodulen" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Module</a>
-            <a className="navbar-item" href="#zusammenarbeit" aria-label="Zur Zusammenarbeit" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Zusammenarbeit</a>
-            <a className="navbar-item" href="#kontakt" aria-label="Zum Kontaktformular" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Kontakt</a>
+            <a className="navbar-item" onClick={() => scrollToSection('home')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Home</a>
+            <a className="navbar-item" onClick={() => scrollToSection('about')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Über mich</a>
+            <a className="navbar-item" onClick={() => scrollToSection('intuition')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Intuition & Sensitivität</a>
+            <a className="navbar-item" onClick={() => scrollToSection('module')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Module</a>
+            <a className="navbar-item" onClick={() => scrollToSection('zusammenarbeit')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Zusammenarbeit</a>
+            <a className="navbar-item" onClick={() => scrollToSection('kontakt')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Kontakt</a>
           </div>
         </div>
       </div>

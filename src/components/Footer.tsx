@@ -1,6 +1,22 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 const Footer = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        element?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      const element = document.getElementById(sectionId)
+      element?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <footer role="contentinfo" style={{ backgroundColor: 'var(--color-heading)', color: 'white', padding: '4rem 1.5rem 2rem' }}>
       <div className="container">
@@ -30,35 +46,35 @@ const Footer = () => {
               <h4 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1.5rem' }}>Navigation</h4>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#home" aria-label="Zur Startseite" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <a onClick={() => scrollToSection('home')} aria-label="Zur Startseite" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none', cursor: 'pointer' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     Home
                   </a>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#about" aria-label="Über Navanita K. Manke" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <a onClick={() => scrollToSection('about')} aria-label="Über Navanita K. Manke" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none', cursor: 'pointer' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     Über mich
                   </a>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#intuition" aria-label="Zum Bereich Intuition und Sensitivität" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <a onClick={() => scrollToSection('intuition')} aria-label="Zum Bereich Intuition und Sensitivität" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none', cursor: 'pointer' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     Intuition & Sensitivität
                   </a>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#module" aria-label="Zu den Ausbildungsmodulen" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <a onClick={() => scrollToSection('module')} aria-label="Zu den Ausbildungsmodulen" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none', cursor: 'pointer' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     Module
                   </a>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#zusammenarbeit" aria-label="Zur Zusammenarbeit" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <a onClick={() => scrollToSection('zusammenarbeit')} aria-label="Zur Zusammenarbeit" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none', cursor: 'pointer' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     Zusammenarbeit
