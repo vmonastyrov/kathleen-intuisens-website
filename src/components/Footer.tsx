@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   return (
     <footer role="contentinfo" style={{ backgroundColor: 'var(--color-heading)', color: 'white', padding: '4rem 1.5rem 2rem' }}>
@@ -70,25 +72,25 @@ const Footer = () => {
               <h4 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1.5rem' }}>Rechtliches</h4>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#" aria-label="Allgemeine Geschäftsbedingungen" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <Link to="/agb" aria-label="Allgemeine Geschäftsbedingungen" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     AGB
-                  </a>
+                  </Link>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#" aria-label="Impressum" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <Link to="/impressum" aria-label="Impressum" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     Impressum
-                  </a>
+                  </Link>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <a href="#" aria-label="Datenschutzerklärung" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
+                  <Link to="/datenschutz" aria-label="Datenschutzerklärung" style={{ color: '#D1D5DB', transition: 'color 0.2s', textDecoration: 'none' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-yellow-green)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = '#D1D5DB'}>
                     Datenschutz
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

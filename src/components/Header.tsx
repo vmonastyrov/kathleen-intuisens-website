@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.svg'
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false)
@@ -30,12 +30,12 @@ const Header = () => {
 
           <div id="navbar-menu" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
             <div className="navbar-start">
-            <a className="navbar-item" href="#home" aria-label="Zur Startseite" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Home</a>
-            <a className="navbar-item" href="#about" aria-label="Über Navanita K. Manke" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Über mich</a>
-            <a className="navbar-item" href="#intuition" aria-label="Zum Bereich Intuition und Sensitivität" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Intuition & Sensitivität</a>
-            <a className="navbar-item" href="#module" aria-label="Zu den Ausbildungsmodulen" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Module</a>
-            <a className="navbar-item" href="#zusammenarbeit" aria-label="Zur Zusammenarbeit" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Zusammenarbeit</a>
-            <a className="navbar-item" href="#kontakt" aria-label="Zum Kontaktformular" style={{ fontWeight: 500, color: 'var(--color-subheading)' }}>Kontakt</a>
+            <a className="navbar-item" href="#home" aria-label="Zur Startseite" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Home</a>
+            <a className="navbar-item" href="#about" aria-label="Über Navanita K. Manke" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Über mich</a>
+            <a className="navbar-item" href="#intuition" aria-label="Zum Bereich Intuition und Sensitivität" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Intuition & Sensitivität</a>
+            <a className="navbar-item" href="#module" aria-label="Zu den Ausbildungsmodulen" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Module</a>
+            <a className="navbar-item" href="#zusammenarbeit" aria-label="Zur Zusammenarbeit" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Zusammenarbeit</a>
+            <a className="navbar-item" href="#kontakt" aria-label="Zum Kontaktformular" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)' }}>Kontakt</a>
           </div>
         </div>
       </div>

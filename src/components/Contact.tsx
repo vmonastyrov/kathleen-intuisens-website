@@ -1,5 +1,12 @@
 import { useState } from 'react'
 
+interface FormErrors {
+  name?: string
+  email?: string
+  subject?: string
+  message?: string
+}
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -7,9 +14,92 @@ const Contact = () => {
     subject: '',
     message: ''
   })
+  const [errors, setErrors] = useState<FormErrors>({})
+  const [touched, setTouched] = useState<Record<string, boolean>>({})
+
+  // Validation functions
+  const validateName = (name: string): string | undefined => {
+    if (!name.trim()) {
+      return 'Bitte geben Sie Ihren Namen ein'
+    }
+    if (name.trim().length < 2) {
+      return 'Der Name muss mindestens 2 Zeichen lang sein'
+    }
+    if (name.length > 100) {
+      return 'Der Name darf maximal 100 Zeichen lang sein'
+    }
+    // Allow letters, spaces, hyphens, apostrophes (including German umlauts)
+    const nameRegex = /^[a-zA-ZäöüÄÖÜßéèêëàâáãåçñíìîïóòôõúùûýÿæœ\s\-']+$/
+    if (!nameRegex.test(name)) {
+      return 'Der Name darf nur Buchstaben, Leerzeichen und Bindestriche enthalten'
+    }
+    return undefined
+  }
+
+  const validateEmail = (email: string): string | undefined => {
+    if (!email.trim()) {
+      return 'Bitte geben Sie Ihre E-Mail-Adresse ein'
+    }
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+    if (!emailRegex.test(email)) {
+      return 'Bitte geben Sie eine gültige E-Mail-Adresse ein'
+    }
+    return undefined
+  }
+
+  const validateSubject = (subject: string): string | undefined => {
+    if (subject.length > 200) {
+      return 'Der Betreff darf maximal 200 Zeichen lang sein'
+    }
+    return undefined
+  }
+
+  const validateMessage = (message: string): string | undefined => {
+    if (!message.trim()) {
+      return 'Bitte geben Sie Ihre Nachricht ein'
+    }
+    if (message.trim().length < 10) {
+      return 'Die Nachricht muss mindestens 10 Zeichen lang sein'
+    }
+    if (message.length > 5000) {
+      return 'Die Nachricht darf maximal 5000 Zeichen lang sein'
+    }
+    return undefined
+  }
+
+  const validateField = (name: string, value: string): string | undefined => {
+    switch (name) {
+      case 'name':
+        return validateName(value)
+      case 'email':
+        return validateEmail(value)
+      case 'subject':
+        return validateSubject(value)
+      case 'message':
+        return validateMessage(value)
+      default:
+        return undefined
+    }
+  }
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {
+      name: validateName(formData.name),
+      email: validateEmail(formData.email),
+      subject: validateSubject(formData.subject),
+      message: validateMessage(formData.message)
+    }
+    setErrors(newErrors)
+    setTouched({ name: true, email: true, subject: true, message: true })
+    return !Object.values(newErrors).some(error => error !== undefined)
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!validateForm()) {
+      return
+    }
 
     // Создаем mailto ссылку с заполненными данными
     const mailtoLink = `mailto:info@intuisens.de?subject=${encodeURIComponent(formData.subject || 'Anfrage von ' + formData.name)}&body=${encodeURIComponent(
@@ -21,9 +111,29 @@ const Contact = () => {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
+    })
+    // Validate on change if field was already touched
+    if (touched[name]) {
+      setErrors({
+        ...errors,
+        [name]: validateField(name, value)
+      })
+    }
+  }
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setTouched({
+      ...touched,
+      [name]: true
+    })
+    setErrors({
+      ...errors,
+      [name]: validateField(name, value)
     })
   }
 
@@ -91,17 +201,20 @@ const Contact = () => {
                   <div className="control">
                     <input
                       id="contact-name"
-                      className="input"
+                      className={`input ${touched.name && errors.name ? 'is-danger' : ''}`}
                       type="text"
                       name="name"
                       placeholder="Ihr Name"
                       value={formData.name}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       required
+                      maxLength={100}
                       aria-required="true"
-                      aria-describedby="name-help"
+                      aria-invalid={touched.name && !!errors.name}
+                      aria-describedby="name-help name-error"
                       style={{
-                        borderColor: 'var(--color-divider)',
+                        borderColor: touched.name && errors.name ? '#f14668' : 'var(--color-divider)',
                         backgroundColor: 'white',
                         color: '#363636',
                         WebkitAppearance: 'none',
@@ -110,6 +223,9 @@ const Contact = () => {
                       }}
                     />
                     <span id="name-help" className="sr-only">Bitte geben Sie Ihren Namen ein</span>
+                    {touched.name && errors.name && (
+                      <p id="name-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.name}</p>
+                    )}
                   </div>
                 </div>
 
@@ -120,17 +236,19 @@ const Contact = () => {
                   <div className="control">
                     <input
                       id="contact-email"
-                      className="input"
+                      className={`input ${touched.email && errors.email ? 'is-danger' : ''}`}
                       type="email"
                       name="email"
                       placeholder="ihre.email@beispiel.de"
                       value={formData.email}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       required
                       aria-required="true"
-                      aria-describedby="email-help"
+                      aria-invalid={touched.email && !!errors.email}
+                      aria-describedby="email-help email-error"
                       style={{
-                        borderColor: 'var(--color-divider)',
+                        borderColor: touched.email && errors.email ? '#f14668' : 'var(--color-divider)',
                         backgroundColor: 'white',
                         color: '#363636',
                         WebkitAppearance: 'none',
@@ -139,6 +257,9 @@ const Contact = () => {
                       }}
                     />
                     <span id="email-help" className="sr-only">Bitte geben Sie Ihre E-Mail-Adresse ein</span>
+                    {touched.email && errors.email && (
+                      <p id="email-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -147,15 +268,18 @@ const Contact = () => {
                   <div className="control">
                     <input
                       id="contact-subject"
-                      className="input"
+                      className={`input ${touched.subject && errors.subject ? 'is-danger' : ''}`}
                       type="text"
                       name="subject"
                       placeholder="Betreff Ihrer Nachricht"
                       value={formData.subject}
                       onChange={handleChange}
-                      aria-describedby="subject-help"
+                      onBlur={handleBlur}
+                      maxLength={200}
+                      aria-invalid={touched.subject && !!errors.subject}
+                      aria-describedby="subject-help subject-error"
                       style={{
-                        borderColor: 'var(--color-divider)',
+                        borderColor: touched.subject && errors.subject ? '#f14668' : 'var(--color-divider)',
                         backgroundColor: 'white',
                         color: '#363636',
                         WebkitAppearance: 'none',
@@ -164,6 +288,9 @@ const Contact = () => {
                       }}
                     />
                     <span id="subject-help" className="sr-only">Optional: Betreff Ihrer Anfrage</span>
+                    {touched.subject && errors.subject && (
+                      <p id="subject-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.subject}</p>
+                    )}
                   </div>
                 </div>
 
@@ -174,17 +301,20 @@ const Contact = () => {
                   <div className="control">
                     <textarea
                       id="contact-message"
-                      className="textarea"
+                      className={`textarea ${touched.message && errors.message ? 'is-danger' : ''}`}
                       name="message"
                       placeholder="Ihre Nachricht an mich..."
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       required
+                      maxLength={5000}
                       aria-required="true"
-                      aria-describedby="message-help"
+                      aria-invalid={touched.message && !!errors.message}
+                      aria-describedby="message-help message-error"
                       style={{
-                        borderColor: 'var(--color-divider)',
+                        borderColor: touched.message && errors.message ? '#f14668' : 'var(--color-divider)',
                         backgroundColor: 'white',
                         color: '#363636',
                         WebkitAppearance: 'none',
@@ -193,6 +323,9 @@ const Contact = () => {
                       }}
                     />
                     <span id="message-help" className="sr-only">Bitte geben Sie Ihre Nachricht ein</span>
+                    {touched.message && errors.message && (
+                      <p id="message-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.message}</p>
+                    )}
                   </div>
                 </div>
 
