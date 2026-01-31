@@ -59,7 +59,7 @@ const About = () => {
                 Betreuung als Vision ganzheitlicher Hebammenarbeit jenseits einer Lebensabschnittbegleitung.
               </p>
               <a
-                href="#kontakt"
+                onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
                 className="button is-medium"
                 aria-label="Kontakt mit Navanita K. Manke aufnehmen"
                 style={{
@@ -67,7 +67,8 @@ const About = () => {
                   color: 'white',
                   border: 'none',
                   fontWeight: 600,
-                  borderRadius: '8px'
+                  borderRadius: '8px',
+                  cursor: 'pointer'
                 }}
               >
                 Kontakt aufnehmen

@@ -20,7 +20,7 @@ const Hero = () => {
               <div className="buttons is-centered">
                 <a
                   className="button is-large"
-                  href="#intuition"
+                  onClick={() => document.getElementById('intuition')?.scrollIntoView({ behavior: 'smooth' })}
                   aria-label="Mehr über Intuition und Sensitivität erfahren"
                   style={{
                     backgroundColor: 'var(--color-yellow-green)',
@@ -28,7 +28,8 @@ const Hero = () => {
                     fontWeight: 600,
                     padding: '1.75rem 3rem',
                     borderRadius: '8px',
-                    border: 'none'
+                    border: 'none',
+                    cursor: 'pointer'
                   }}
                 >
                   Mehr erfahren →

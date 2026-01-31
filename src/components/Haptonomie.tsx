@@ -82,7 +82,7 @@ const Haptonomie = () => {
                   Beziehungen zu gestalten.
                 </p>
                 <a
-                  href="#kontakt"
+                  onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
                   className="button is-medium"
                   aria-label="Kontakt für Haptonomie-Sitzungen aufnehmen"
                   style={{
@@ -91,7 +91,8 @@ const Haptonomie = () => {
                     border: 'none',
                     fontWeight: 600,
                     borderRadius: '8px',
-                    textDecoration: 'none'
+                    textDecoration: 'none',
+                    cursor: 'pointer'
                   }}
                 >
                   Kontakt aufnehmen

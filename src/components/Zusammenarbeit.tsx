@@ -47,7 +47,7 @@ const Zusammenarbeit = () => {
                 <li style={{ marginBottom: '0.75rem' }}>Perspektivisch möglicherweise auch als Wahlpflichtfach</li>
               </ul>
               <a
-                href="#kontakt"
+                onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
                 className="button is-large"
                 aria-label="Kontakt für Hochschul-Kooperation aufnehmen"
                 style={{
@@ -55,7 +55,8 @@ const Zusammenarbeit = () => {
                   color: 'white',
                   border: 'none',
                   fontWeight: 600,
-                  borderRadius: '8px'
+                  borderRadius: '8px',
+                  cursor: 'pointer'
                 }}
               >
                 Kontakt aufnehmen
