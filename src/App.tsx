@@ -26,7 +26,7 @@ function App() {
       </a>
 
       <Header />
-      <main id="main-content">
+      <main id="main-content" style={{ paddingTop: '96px' }}>
         <Hero />
         <About />
         <Intuition />

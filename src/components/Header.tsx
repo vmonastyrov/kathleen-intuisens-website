@@ -25,10 +25,10 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar is-white" role="navigation" aria-label="main navigation" style={{ padding: '0.5rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', backgroundColor: 'white' }}>
+      <nav className="navbar is-white" role="navigation" aria-label="main navigation" style={{ padding: '0.5rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', backgroundColor: 'white', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
         <div className="container">
           <div className="navbar-brand">
-            <a className="navbar-item" href="#/" aria-label="IntuiSens Homepage" onClick={() => setIsActive(false)}>
+            <a className="navbar-item" aria-label="IntuiSens Homepage" onClick={() => scrollToSection('home')} style={{ cursor: 'pointer' }}>
               <img src={logo} alt="IntuiSens Logo - Berühren berührt" style={{ height: '80px', maxHeight: '80px' }} />
             </a>
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Datenschutz = () => {
@@ -15,7 +16,8 @@ const Datenschutz = () => {
         <meta name="description" content="Datenschutzerklärung von IntuiSens - Navanita K. Manke" />
       </Helmet>
 
-      <div style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh' }}>
+      <Header />
+      <div style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh', paddingTop: '96px' }}>
         <div className="container" style={{ padding: '3rem 1.5rem' }}>
           <Link to="/" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', marginBottom: '2rem' }}>
             &larr; Zurück zur Startseite
@@ -71,10 +73,11 @@ const Datenschutz = () => {
               Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
             </p>
             <p>
-              Navanita K. Manke<br />
-              [Adresse eintragen]<br />
-              Telefon: +49 160 22 726 724<br />
-              E-Mail: info@intuisens.de
+              Navanita Kathleen Manke<br />
+              32, Chemin de Chamonix<br />
+              26220 Dieulefit, Frankreich<br />
+              Telefon: +33 6 85 17 81 58<br />
+              E-Mail: navanitamanke@live.fr
             </p>
 
             <h3 style={{ color: 'var(--color-heading)', fontSize: '1.25rem', marginTop: '1.5rem' }}>Speicherdauer</h3>

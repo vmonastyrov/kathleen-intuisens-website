@@ -1,4 +1,4 @@
-import zusammenarbeitImg from '../assets/4.png'
+import bild4 from '../assets/bild4.png'
 
 const Zusammenarbeit = () => {
   return (
@@ -8,7 +8,7 @@ const Zusammenarbeit = () => {
           <div className="column is-6">
             <figure className="image" style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}>
               <img
-                src={zusammenarbeitImg}
+                src={bild4}
                 alt="Hochschul-Kooperation für Hebammenausbildung"
                 style={{ objectFit: 'cover', width: '100%', height: '500px', display: 'block' }}
               />

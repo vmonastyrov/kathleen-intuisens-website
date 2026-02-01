@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Impressum = () => {
@@ -15,7 +16,8 @@ const Impressum = () => {
         <meta name="description" content="Impressum von IntuiSens - Navanita K. Manke" />
       </Helmet>
 
-      <div style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh' }}>
+      <Header />
+      <div style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh', paddingTop: '96px' }}>
         <div className="container" style={{ padding: '3rem 1.5rem' }}>
           <Link to="/" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', marginBottom: '2rem' }}>
             &larr; Zurück zur Startseite
@@ -26,37 +28,40 @@ const Impressum = () => {
           </h1>
 
           <div className="content" style={{ maxWidth: '800px', lineHeight: '1.8', color: '#555' }}>
-            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Angaben gemäß § 5 TMG</h2>
+            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Verantwortlich für den Inhalt</h2>
             <p>
-              <strong>Navanita K. Manke</strong><br />
-              IntuiSens<br />
-              [Straße und Hausnummer]<br />
-              [PLZ Ort]
+              <strong>Navanita Kathleen Manke</strong><br />
+              Freiberufliche Hebamme (sage-femme libérale)<br />
+              Registriert im Ordre des sages-femmes, Frankreich<br />
+              <br />
+              32, Chemin de Chamonix<br />
+              26220 Dieulefit<br />
+              Frankreich
             </p>
 
             <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Kontakt</h2>
             <p>
-              Telefon: +49 160 22 726 724<br />
-              E-Mail: info@intuisens.de
+              Telefon: +33 6 85 17 81 58<br />
+              E-Mail: navanitamanke@live.fr
             </p>
 
-            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Berufsbezeichnung</h2>
             <p>
-              Berufsbezeichnung: Hebamme<br />
-              Zuständige Kammer: [Kammer eintragen]<br />
-              Verliehen in: Deutschland
+              Berufsbezeichnung: Sage-femme (Hebamme)<br />
+              Zuständige Kammer: Ordre des sages-femmes<br />
+              Verliehen in: Frankreich
             </p>
 
-            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Umsatzsteuer-ID</h2>
+            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Handelsregisternummer</h2>
             <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-              [USt-IdNr. eintragen oder "Kleinunternehmer gemäß § 19 UStG"]
+              SIRET: 792 639 270 000 42
             </p>
 
-            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Verantwortlich für den Inhalt</h2>
             <p>
-              Navanita K. Manke<br />
-              [Adresse wie oben]
+              Navanita Kathleen Manke<br />
+              32, Chemin de Chamonix<br />
+              26220 Dieulefit, Frankreich
             </p>
 
             <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>Streitschlichtung</h2>

@@ -7,6 +7,8 @@ interface FormErrors {
   message?: string
 }
 
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,6 +18,8 @@ const Contact = () => {
   })
   const [errors, setErrors] = useState<FormErrors>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
+  const [status, setStatus] = useState<FormStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   // Validation functions
   const validateName = (name: string): string | undefined => {
@@ -94,20 +98,44 @@ const Contact = () => {
     return !Object.values(newErrors).some(error => error !== undefined)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!validateForm()) {
       return
     }
 
-    // Создаем mailto ссылку с заполненными данными
-    const mailtoLink = `mailto:info@intuisens.de?subject=${encodeURIComponent(formData.subject || 'Anfrage von ' + formData.name)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nE-Mail: ${formData.email}\n\nNachricht:\n${formData.message}`
-    )}`
+    setStatus('submitting')
+    setErrorMessage('')
 
-    // Открываем почтовый клиент
-    window.location.href = mailtoLink
+    try {
+      const response = await fetch('https://formspree.io/f/xgozkroe', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTouched({})
+        setErrors({})
+      } else {
+        const data = await response.json()
+        if (data.errors) {
+          setErrorMessage(data.errors.map((error: { message: string }) => error.message).join(', '))
+        } else {
+          setErrorMessage('Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut.')
+        }
+        setStatus('error')
+      }
+    } catch {
+      setErrorMessage('Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut.')
+      setStatus('error')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -167,17 +195,17 @@ const Contact = () => {
 
               <div style={{ marginBottom: '2rem' }}>
                 <h4 style={{ color: 'var(--color-heading)', fontWeight: 600, marginBottom: '0.5rem' }}>
-                  Navanita K. Manke
+                  Navanita Kathleen Manke
                 </h4>
                 <p style={{ marginBottom: '1rem' }}>
-                  <strong>Telefon:</strong> <a href="tel:+4916022726724" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>+49 160 22 726 724</a><br />
+                  <strong>Telefon:</strong> <a href="tel:+33685178158" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>+33 6 85 17 81 58</a><br />
                   <span style={{ fontSize: '0.95rem', color: '#777' }}>
                     Telefonisch erreichbar Mo–Fr 8–9 Uhr<br />
                     Rückruf innerhalb von 48 Std. bei Nachricht auf AB
                   </span>
                 </p>
                 <p>
-                  <strong>E-Mail:</strong> <a href="mailto:info@intuisens.de" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>info@intuisens.de</a>
+                  <strong>E-Mail:</strong> <a href="mailto:navanitamanke@live.fr" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>navanitamanke@live.fr</a>
                 </p>
               </div>
             </div>
@@ -193,163 +221,214 @@ const Contact = () => {
               <h3 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
                 Kontaktformular
               </h3>
-              <form onSubmit={handleSubmit} aria-label="Kontaktformular">
-                <div className="field">
-                  <label htmlFor="contact-name" className="label" style={{ color: 'var(--color-heading)' }}>
-                    Name <span aria-label="Pflichtfeld">*</span>
-                  </label>
-                  <div className="control">
-                    <input
-                      id="contact-name"
-                      className={`input ${touched.name && errors.name ? 'is-danger' : ''}`}
-                      type="text"
-                      name="name"
-                      placeholder="Ihr Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      required
-                      maxLength={100}
-                      aria-required="true"
-                      aria-invalid={touched.name && !!errors.name}
-                      aria-describedby="name-help name-error"
-                      style={{
-                        borderColor: touched.name && errors.name ? '#f14668' : 'var(--color-divider)',
-                        backgroundColor: 'white',
-                        color: '#363636',
-                        WebkitAppearance: 'none',
-                        appearance: 'none',
-                        colorScheme: 'light'
-                      }}
-                    />
-                    <span id="name-help" className="sr-only">Bitte geben Sie Ihren Namen ein</span>
-                    {touched.name && errors.name && (
-                      <p id="name-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.name}</p>
-                    )}
-                  </div>
-                </div>
 
-                <div className="field">
-                  <label htmlFor="contact-email" className="label" style={{ color: 'var(--color-heading)' }}>
-                    E-Mail <span aria-label="Pflichtfeld">*</span>
-                  </label>
-                  <div className="control">
-                    <input
-                      id="contact-email"
-                      className={`input ${touched.email && errors.email ? 'is-danger' : ''}`}
-                      type="email"
-                      name="email"
-                      placeholder="ihre.email@beispiel.de"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      required
-                      aria-required="true"
-                      aria-invalid={touched.email && !!errors.email}
-                      aria-describedby="email-help email-error"
-                      style={{
-                        borderColor: touched.email && errors.email ? '#f14668' : 'var(--color-divider)',
-                        backgroundColor: 'white',
-                        color: '#363636',
-                        WebkitAppearance: 'none',
-                        appearance: 'none',
-                        colorScheme: 'light'
-                      }}
-                    />
-                    <span id="email-help" className="sr-only">Bitte geben Sie Ihre E-Mail-Adresse ein</span>
-                    {touched.email && errors.email && (
-                      <p id="email-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.email}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="field">
-                  <label htmlFor="contact-subject" className="label" style={{ color: 'var(--color-heading)' }}>Betreff</label>
-                  <div className="control">
-                    <input
-                      id="contact-subject"
-                      className={`input ${touched.subject && errors.subject ? 'is-danger' : ''}`}
-                      type="text"
-                      name="subject"
-                      placeholder="Betreff Ihrer Nachricht"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      maxLength={200}
-                      aria-invalid={touched.subject && !!errors.subject}
-                      aria-describedby="subject-help subject-error"
-                      style={{
-                        borderColor: touched.subject && errors.subject ? '#f14668' : 'var(--color-divider)',
-                        backgroundColor: 'white',
-                        color: '#363636',
-                        WebkitAppearance: 'none',
-                        appearance: 'none',
-                        colorScheme: 'light'
-                      }}
-                    />
-                    <span id="subject-help" className="sr-only">Optional: Betreff Ihrer Anfrage</span>
-                    {touched.subject && errors.subject && (
-                      <p id="subject-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.subject}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="field">
-                  <label htmlFor="contact-message" className="label" style={{ color: 'var(--color-heading)' }}>
-                    Nachricht <span aria-label="Pflichtfeld">*</span>
-                  </label>
-                  <div className="control">
-                    <textarea
-                      id="contact-message"
-                      className={`textarea ${touched.message && errors.message ? 'is-danger' : ''}`}
-                      name="message"
-                      placeholder="Ihre Nachricht an mich..."
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      required
-                      maxLength={5000}
-                      aria-required="true"
-                      aria-invalid={touched.message && !!errors.message}
-                      aria-describedby="message-help message-error"
-                      style={{
-                        borderColor: touched.message && errors.message ? '#f14668' : 'var(--color-divider)',
-                        backgroundColor: 'white',
-                        color: '#363636',
-                        WebkitAppearance: 'none',
-                        appearance: 'none',
-                        colorScheme: 'light'
-                      }}
-                    />
-                    <span id="message-help" className="sr-only">Bitte geben Sie Ihre Nachricht ein</span>
-                    {touched.message && errors.message && (
-                      <p id="message-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="field">
-                  <div className="control">
-                    <button
-                      type="submit"
-                      className="button is-large is-fullwidth"
-                      style={{
-                        backgroundColor: 'var(--color-yellow-green)',
-                        color: 'white',
-                        border: 'none',
-                        fontWeight: 600,
-                        borderRadius: '8px'
-                      }}
-                    >
-                      Nachricht senden
-                    </button>
-                  </div>
-                  <p style={{ fontSize: '0.9rem', color: '#777', marginTop: '1rem' }}>
-                    * Pflichtfelder. Ihre Nachricht wird in Ihrem E-Mail-Programm geöffnet.
+              {status === 'success' ? (
+                <div style={{
+                  padding: '2rem',
+                  backgroundColor: 'var(--color-bg-section2)',
+                  borderRadius: '8px',
+                  textAlign: 'center'
+                }}>
+                  <p style={{ fontSize: '1.2rem', color: 'var(--color-yellow-green)', fontWeight: 600, marginBottom: '1rem' }}>
+                    Vielen Dank für Ihre Nachricht!
                   </p>
+                  <p style={{ color: '#555' }}>
+                    Ich werde mich so schnell wie möglich bei Ihnen melden.
+                  </p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="button"
+                    style={{
+                      marginTop: '1.5rem',
+                      backgroundColor: 'var(--color-yellow-green)',
+                      color: 'white',
+                      border: 'none',
+                      fontWeight: 600,
+                      borderRadius: '8px'
+                    }}
+                  >
+                    Weitere Nachricht senden
+                  </button>
                 </div>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} aria-label="Kontaktformular">
+                  {status === 'error' && (
+                    <div style={{
+                      padding: '1rem',
+                      backgroundColor: '#ffeaea',
+                      borderRadius: '8px',
+                      marginBottom: '1.5rem',
+                      border: '1px solid #f14668'
+                    }}>
+                      <p style={{ color: '#f14668', margin: 0 }}>
+                        {errorMessage}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="field">
+                    <label htmlFor="contact-name" className="label" style={{ color: 'var(--color-heading)' }}>
+                      Name <span aria-label="Pflichtfeld">*</span>
+                    </label>
+                    <div className="control">
+                      <input
+                        id="contact-name"
+                        className={`input ${touched.name && errors.name ? 'is-danger' : ''}`}
+                        type="text"
+                        name="name"
+                        placeholder="Ihr Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        required
+                        maxLength={100}
+                        disabled={status === 'submitting'}
+                        aria-required="true"
+                        aria-invalid={touched.name && !!errors.name}
+                        aria-describedby="name-help name-error"
+                        style={{
+                          borderColor: touched.name && errors.name ? '#f14668' : 'var(--color-divider)',
+                          backgroundColor: 'white',
+                          color: '#363636',
+                          WebkitAppearance: 'none',
+                          appearance: 'none',
+                          colorScheme: 'light'
+                        }}
+                      />
+                      <span id="name-help" className="sr-only">Bitte geben Sie Ihren Namen ein</span>
+                      {touched.name && errors.name && (
+                        <p id="name-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.name}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="contact-email" className="label" style={{ color: 'var(--color-heading)' }}>
+                      E-Mail <span aria-label="Pflichtfeld">*</span>
+                    </label>
+                    <div className="control">
+                      <input
+                        id="contact-email"
+                        className={`input ${touched.email && errors.email ? 'is-danger' : ''}`}
+                        type="email"
+                        name="email"
+                        placeholder="ihre.email@beispiel.de"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        required
+                        disabled={status === 'submitting'}
+                        aria-required="true"
+                        aria-invalid={touched.email && !!errors.email}
+                        aria-describedby="email-help email-error"
+                        style={{
+                          borderColor: touched.email && errors.email ? '#f14668' : 'var(--color-divider)',
+                          backgroundColor: 'white',
+                          color: '#363636',
+                          WebkitAppearance: 'none',
+                          appearance: 'none',
+                          colorScheme: 'light'
+                        }}
+                      />
+                      <span id="email-help" className="sr-only">Bitte geben Sie Ihre E-Mail-Adresse ein</span>
+                      {touched.email && errors.email && (
+                        <p id="email-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.email}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="contact-subject" className="label" style={{ color: 'var(--color-heading)' }}>Betreff</label>
+                    <div className="control">
+                      <input
+                        id="contact-subject"
+                        className={`input ${touched.subject && errors.subject ? 'is-danger' : ''}`}
+                        type="text"
+                        name="subject"
+                        placeholder="Betreff Ihrer Nachricht"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        maxLength={200}
+                        disabled={status === 'submitting'}
+                        aria-invalid={touched.subject && !!errors.subject}
+                        aria-describedby="subject-help subject-error"
+                        style={{
+                          borderColor: touched.subject && errors.subject ? '#f14668' : 'var(--color-divider)',
+                          backgroundColor: 'white',
+                          color: '#363636',
+                          WebkitAppearance: 'none',
+                          appearance: 'none',
+                          colorScheme: 'light'
+                        }}
+                      />
+                      <span id="subject-help" className="sr-only">Optional: Betreff Ihrer Anfrage</span>
+                      {touched.subject && errors.subject && (
+                        <p id="subject-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.subject}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="contact-message" className="label" style={{ color: 'var(--color-heading)' }}>
+                      Nachricht <span aria-label="Pflichtfeld">*</span>
+                    </label>
+                    <div className="control">
+                      <textarea
+                        id="contact-message"
+                        className={`textarea ${touched.message && errors.message ? 'is-danger' : ''}`}
+                        name="message"
+                        placeholder="Ihre Nachricht an mich..."
+                        rows={6}
+                        value={formData.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        required
+                        maxLength={5000}
+                        disabled={status === 'submitting'}
+                        aria-required="true"
+                        aria-invalid={touched.message && !!errors.message}
+                        aria-describedby="message-help message-error"
+                        style={{
+                          borderColor: touched.message && errors.message ? '#f14668' : 'var(--color-divider)',
+                          backgroundColor: 'white',
+                          color: '#363636',
+                          WebkitAppearance: 'none',
+                          appearance: 'none',
+                          colorScheme: 'light'
+                        }}
+                      />
+                      <span id="message-help" className="sr-only">Bitte geben Sie Ihre Nachricht ein</span>
+                      {touched.message && errors.message && (
+                        <p id="message-error" className="help is-danger" style={{ color: '#f14668' }}>{errors.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="field">
+                    <div className="control">
+                      <button
+                        type="submit"
+                        className="button is-large is-fullwidth"
+                        disabled={status === 'submitting'}
+                        style={{
+                          backgroundColor: 'var(--color-yellow-green)',
+                          color: 'white',
+                          border: 'none',
+                          fontWeight: 600,
+                          borderRadius: '8px',
+                          opacity: status === 'submitting' ? 0.7 : 1
+                        }}
+                      >
+                        {status === 'submitting' ? 'Wird gesendet...' : 'Nachricht senden'}
+                      </button>
+                    </div>
+                    <p style={{ fontSize: '0.9rem', color: '#777', marginTop: '1rem' }}>
+                      * Pflichtfelder
+                    </p>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </div>

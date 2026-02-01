@@ -1,8 +1,8 @@
 import img1 from '../assets/1.png'
-import img3 from '../assets/3.png'
 import img5 from '../assets/5.jpeg'
 import img6 from '../assets/6.png'
-import img8 from '../assets/8.png'
+import bild1 from '../assets/bild1.png'
+import bild2 from '../assets/bild2.png'
 
 const Haptonomie = () => {
   const applications = [
@@ -10,13 +10,13 @@ const Haptonomie = () => {
       title: 'Haptonomie in der Schwangerschaft und bei der Geburt',
       subtitle: 'Empfangen, annehmen, akzeptieren, verbunden sein, ganz.',
       description: 'Schon im Mutterleib spürt ein Kind, dass es willkommen ist und frei, in Kontakt mit seinen Eltern zu treten. Durch haptonomische Berührung erfährt es Geborgenheit, Sicherheit, Liebe und die Bestätigung, so angenommen zu sein, wie es ist.',
-      image: img3
+      image: bild2
     },
     {
       title: 'Haptonomie für das Neugeborene und seine Eltern',
       subtitle: 'Angenommen, wie ich bin, geborgen, gesehen, verbunden.',
       description: 'Mit der Geburt tritt das Baby als eigenständiges Wesen ins Leben – und ist doch noch eng verbunden mit den Menschen, die es versorgen. Haptonomie unterstützt das Baby, seine Eigenständigkeit zu entfalten und aktiver am Familienalltag teilzunehmen.',
-      image: img8
+      image: bild1
     },
     {
       title: 'Haptonomie für Einzelpersonen',
@@ -50,7 +50,7 @@ const Haptonomie = () => {
             <div className="column is-5 is-offset-1">
               <p style={{
                 fontSize: '1.1rem',
-                color: 'var(--color-gold)',
+                color: 'var(--color-yellow-green)',
                 fontWeight: 600,
                 marginBottom: '1rem',
                 textTransform: 'uppercase',
@@ -151,7 +151,7 @@ const Haptonomie = () => {
                     </h3>
                     <p style={{
                       fontSize: '0.95rem',
-                      color: 'var(--color-gold)',
+                      color: 'var(--color-yellow-green)',
                       marginBottom: '1rem'
                     }}>
                       {app.subtitle}

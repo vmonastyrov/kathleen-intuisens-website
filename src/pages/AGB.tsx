@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const AGB = () => {
@@ -15,7 +16,8 @@ const AGB = () => {
         <meta name="description" content="Allgemeine Geschäftsbedingungen von IntuiSens - Navanita K. Manke" />
       </Helmet>
 
-      <div style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh' }}>
+      <Header />
+      <div style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh', paddingTop: '96px' }}>
         <div className="container" style={{ padding: '3rem 1.5rem' }}>
           <Link to="/" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', marginBottom: '2rem' }}>
             &larr; Zurück zur Startseite

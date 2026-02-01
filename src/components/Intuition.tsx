@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import icon1 from '../assets/icon1.png'
+import icon2 from '../assets/icon2.png'
+import icon3 from '../assets/icon3.png'
+import icon4 from '../assets/icon4.png'
 
 const Intuition = () => {
   const [expandedMethod, setExpandedMethod] = useState<string | null>(null)
@@ -99,25 +103,25 @@ const Intuition = () => {
       id: 'haptonomie',
       title: 'Haptonomie – Berührung & Beziehung',
       description: 'Berührung und einfühlende Kommunikation zwischen Hebamme, Mutter/Vater und Kind',
-      icon: '🤝'
+      icon: icon1
     },
     {
       id: 'atemarbeit',
       title: 'Atemarbeit als Ressource',
       description: 'Regulierung des autonomen Nervensystems durch bewusste Atemführung',
-      icon: '🌬️'
+      icon: icon2
     },
     {
       id: 'achtsamkeit',
       title: 'Achtsamkeit – Innere Präsenz',
       description: 'Selbst- und Fremdwahrnehmung, emotionale Selbstregulation und Führung',
-      icon: '🧘'
+      icon: icon3
     },
     {
       id: 'sophrologie',
       title: 'Sophrologie',
       description: 'Körperwahrnehmung, mentale Klarheit und emotionale Balance',
-      icon: '✨'
+      icon: icon4
     }
   ]
 
@@ -195,8 +199,12 @@ const Intuition = () => {
                 display: 'flex',
                 flexDirection: 'column'
               }}>
-                <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>
-                  {method.icon}
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <img
+                    src={method.icon}
+                    alt={method.title}
+                    style={{ width: '80px', height: '80px', objectFit: 'contain' }}
+                  />
                 </div>
                 <h4 className="title is-5" style={{
                   color: 'var(--color-heading)',

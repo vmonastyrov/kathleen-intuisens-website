@@ -1,8 +1,10 @@
+import bild3 from '../assets/bild3.png'
+
 const Hero = () => {
   return (
     <section id="home" className="hero is-medium" aria-labelledby="hero-title" style={{
       backgroundColor: '#214B78',
-      backgroundImage: 'linear-gradient(135deg, rgba(74, 109, 143, 0.7) 0%, rgba(33, 75, 120, 0.8) 100%), url(https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=1920&q=80)',
+      backgroundImage: `linear-gradient(135deg, rgba(74, 109, 143, 0.6) 0%, rgba(33, 75, 120, 0.7) 100%), url(${bild3})`,
       backgroundSize: 'cover, cover',
       backgroundPosition: 'center, center',
       backgroundRepeat: 'no-repeat, no-repeat'
