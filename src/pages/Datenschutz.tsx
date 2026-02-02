@@ -57,8 +57,27 @@ const Datenschutz = () => {
             <p>
               Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
             </p>
+            <h3 style={{ color: 'var(--color-heading)', fontSize: '1.25rem', marginTop: '1.5rem' }}>GitHub Pages</h3>
             <p>
-              [Hosting-Anbieter eintragen - z.B. GitHub Pages, Netlify, etc.]
+              Anbieter ist die GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA (nachfolgend „GitHub").
+            </p>
+            <p>
+              Wenn Sie unsere Website besuchen, werden Ihre personenbezogenen Daten auf den Servern von GitHub verarbeitet. Hierbei können auch personenbezogene Daten an das Mutterunternehmen von GitHub, die Microsoft Corporation, und an Server in den USA übermittelt werden.
+            </p>
+            <p>
+              Die Verwendung von GitHub Pages erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website.
+            </p>
+            <p>
+              Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt. Details finden Sie hier:{' '}
+              <a href="https://docs.github.com/en/site-policy/privacy-policies/github-data-protection-agreement" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-yellow-green)' }}>
+                https://docs.github.com/en/site-policy/privacy-policies/github-data-protection-agreement
+              </a>
+            </p>
+            <p>
+              Weitere Informationen zum Datenschutz bei GitHub finden Sie unter:{' '}
+              <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-yellow-green)' }}>
+                https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
+              </a>
             </p>
 
             <h2 style={{ color: 'var(--color-heading)', fontSize: '1.5rem', marginTop: '2rem' }}>3. Allgemeine Hinweise und Pflichtinformationen</h2>
@@ -98,6 +117,19 @@ const Datenschutz = () => {
             </p>
             <p>
               Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.
+            </p>
+            <p>
+              <strong>Formspree</strong><br />
+              Für die Verarbeitung des Kontaktformulars nutzen wir den Dienst Formspree. Anbieter ist Formspree, Inc., 3500 South DuPont Highway, Suite R-203, Dover, DE 19901, USA.
+            </p>
+            <p>
+              Wenn Sie das Kontaktformular ausfüllen, werden Ihre eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) an die Server von Formspree in den USA übertragen und dort verarbeitet. Formspree speichert diese Daten, um sie uns per E-Mail zuzustellen.
+            </p>
+            <p>
+              Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt. Weitere Informationen zum Datenschutz bei Formspree finden Sie unter:{' '}
+              <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-yellow-green)' }}>
+                https://formspree.io/legal/privacy-policy
+              </a>
             </p>
 
             <h3 style={{ color: 'var(--color-heading)', fontSize: '1.25rem', marginTop: '1.5rem' }}>Anfrage per E-Mail, Telefon</h3>
