@@ -6,6 +6,7 @@ import App from './App'
 import AGB from './pages/AGB'
 import Impressum from './pages/Impressum'
 import Datenschutz from './pages/Datenschutz'
+import Danke from './pages/Danke'
 import 'bulma/css/bulma.min.css'
 import './index.css'
 
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/agb" element={<AGB />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/danke" element={<Danke />} />
         </Routes>
       </HashRouter>
     </HelmetProvider>
