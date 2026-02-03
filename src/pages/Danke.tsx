@@ -27,7 +27,7 @@ const Danke = () => {
             borderRadius: '12px',
             boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
           }}>
-            <p style={{ fontSize: '4rem', marginBottom: '1rem' }}>&#10003;</p>
+            <p style={{ fontSize: '4rem', marginBottom: '1rem', color: 'var(--color-yellow-green)' }}>&#10003;</p>
             <h1 className="title" style={{ fontSize: '2rem', color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
               Vielen Dank für Ihre Nachricht!
             </h1>

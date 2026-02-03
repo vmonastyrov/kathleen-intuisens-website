@@ -189,8 +189,7 @@ const Contact = () => {
                 onSubmit={handleSubmit}
                 aria-label="Kontaktformular"
               >
-                <input type="hidden" name="_next" value={window.location.origin + '/#/danke'} />
-
+                
                 <div className="field">
                   <label htmlFor="contact-name" className="label" style={{ color: 'var(--color-heading)' }}>
                     Name <span aria-label="Pflichtfeld">*</span>

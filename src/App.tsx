@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -10,6 +12,14 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (document.referrer.includes('formspree.io')) {
+      navigate('/danke')
+    }
+  }, [navigate])
+
   return (
     <>
       <Helmet>
