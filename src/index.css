@@ -78,6 +78,70 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
   .section-gap {
     padding: 3rem 1.5rem;
   }
+
+  /* Mobile image optimization */
+  .hero {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  .hero .title {
+    font-size: 2rem !important;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem !important;
+  }
+
+  /* Ensure images scale properly on mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  figure.image {
+    margin: 0 auto 2rem;
+    max-width: 280px;
+  }
+
+  /* Better text sizing on mobile */
+  .section .title {
+    font-size: 1.75rem !important;
+  }
+
+  .section p {
+    font-size: 1rem !important;
+  }
+
+  /* Stack columns on mobile */
+  .columns.is-vcentered {
+    flex-direction: column;
+  }
+
+  .columns.is-vcentered .column.is-offset-1 {
+    margin-left: 0;
+  }
+
+  /* Limit image heights on mobile */
+  figure.image img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  /* Better box padding on mobile */
+  .box {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Ensure good contrast for all body text */
+body {
+  color: #333;
+}
+
+/* Improve text contrast globally */
+p, li, span {
+  color: inherit;
 }
 
 /* Accessibility Improvements */

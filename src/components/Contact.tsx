@@ -198,14 +198,14 @@ const Contact = () => {
                   Navanita Kathleen Manke
                 </h4>
                 <p style={{ marginBottom: '1rem' }}>
-                  <strong>Telefon:</strong> <a href="tel:+33685178158" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>+33 6 85 17 81 58</a><br />
-                  <span style={{ fontSize: '0.95rem', color: '#777' }}>
+                  <strong>Telefon:</strong> <a href="tel:+4915122726724" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>+49 151 22 726 724</a><br />
+                  <span style={{ fontSize: '0.95rem', color: '#555' }}>
                     Telefonisch erreichbar Mo–Fr 8–9 Uhr<br />
                     Rückruf innerhalb von 48 Std. bei Nachricht auf AB
                   </span>
                 </p>
                 <p>
-                  <strong>E-Mail:</strong> <a href="mailto:navanitamanke@live.fr" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>navanitamanke@live.fr</a>
+                  <strong>E-Mail:</strong> <a href="mailto:navanita@live.de" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>navanita@live.de</a>
                 </p>
               </div>
             </div>
@@ -423,7 +423,7 @@ const Contact = () => {
                         {status === 'submitting' ? 'Wird gesendet...' : 'Nachricht senden'}
                       </button>
                     </div>
-                    <p style={{ fontSize: '0.9rem', color: '#777', marginTop: '1rem' }}>
+                    <p style={{ fontSize: '0.9rem', color: '#555', marginTop: '1rem' }}>
                       * Pflichtfelder
                     </p>
                   </div>

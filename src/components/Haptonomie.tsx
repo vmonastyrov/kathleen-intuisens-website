@@ -22,13 +22,13 @@ const Haptonomie = () => {
       title: 'Haptonomie für Einzelpersonen',
       subtitle: 'Tief mit seinem Inneren in Verbindung, anerkennen, authentisch ganz werden',
       description: 'Haptonomie lädt ein, sich selbst in Tiefe zu begegnen – den eigenen Gefühlen, Verletzungen und inneren Wahrheiten. Durch achtsame Berührung entsteht ein Raum von Geborgenheit und Annahme, in dem Heilung und Ganzwerden möglich werden.',
-      image: img5
+      image: img6
     },
     {
       title: 'Haptonomie für Paare',
       subtitle: 'Ein verbindender Raum für authentische Begegnung',
       description: 'Haptonomie eröffnet Paaren einen neuen Weg der Begegnung und des miteinander Teilens – jenseits von Routine, Gewohnheit und Sprachlosigkeit. Sie unterstützt, sich gegenseitig zu empfangen und anzunehmen.',
-      image: img6
+      image: img5
     }
   ]
 
@@ -116,7 +116,7 @@ const Haptonomie = () => {
             </h2>
             <p className="subtitle" style={{
               fontSize: '1.2rem',
-              color: '#666',
+              color: '#444',
               maxWidth: '800px',
               margin: '0 auto'
             }}>
@@ -158,7 +158,7 @@ const Haptonomie = () => {
                     </p>
                     <p style={{
                       fontSize: '1rem',
-                      color: '#666',
+                      color: '#444',
                       lineHeight: '1.7'
                     }}>
                       {app.description}

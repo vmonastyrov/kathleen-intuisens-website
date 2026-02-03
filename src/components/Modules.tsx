@@ -1,3 +1,5 @@
+import basisIcon from '../assets/basis-icon.jpeg'
+
 const Modules = () => {
   const advancedModules = [
     {
@@ -66,21 +68,17 @@ const Modules = () => {
         }}>
           <div className="columns is-vcentered">
             <div className="column is-2 has-text-centered">
-              <div style={{
-                width: '80px',
-                height: '80px',
-                borderRadius: '50%',
-                backgroundColor: 'var(--color-gold)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto',
-                fontSize: '2rem',
-                fontWeight: 700,
-                color: 'var(--color-heading)'
-              }}>
-                ★
-              </div>
+              <img
+                src={basisIcon}
+                alt="Basis-Modul Icon"
+                style={{
+                  width: '80px',
+                  height: '80px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  margin: '0 auto'
+                }}
+              />
             </div>
             <div className="column is-10">
               <h3 className="title is-3" style={{ color: 'var(--color-heading)', marginBottom: '1rem' }}>
@@ -89,11 +87,11 @@ const Modules = () => {
               <p className="subtitle is-5" style={{ color: 'var(--color-subheading)', marginBottom: '1.5rem' }}>
                 Berührung – Beziehung – Präsenz
               </p>
-              <p style={{ fontSize: '1.1rem', color: '#666', lineHeight: '1.8', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.8', marginBottom: '1rem' }}>
                 <strong>Zentrale Kompetenzen im Hebammenberuf:</strong> Praxisnahes Wissen und verkörperte Erfahrung
                 in der Haptonomie und Achtsamkeit
               </p>
-              <p style={{ fontSize: '1rem', color: '#888' }}>
+              <p style={{ fontSize: '1rem', color: '#555' }}>
                 Abhängig von den Ressourcen als 3-tägiges „Basis-Intensivseminar" oder 1-tägiges
                 „Basis-Einführungsseminar" mit Teilnahmebescheinigung
               </p>
@@ -106,7 +104,7 @@ const Modules = () => {
           <h3 className="title is-4 has-text-centered" style={{ color: 'var(--color-heading)', marginBottom: '2rem' }}>
             Die Aufbau-Module
           </h3>
-          <p className="has-text-centered" style={{ fontSize: '1.1rem', color: '#666', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
+          <p className="has-text-centered" style={{ fontSize: '1.1rem', color: '#444', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
             6 Module sind im Baukastensystem einzeln buchbar. Optimalerweise ein Modul je Semester.
             Dauer jeweils 5-tägig plus Selbststudium und Portfolioarbeit mit Zertifikat, optional curricular integrierbar, 1 ECTS-Punkt je Modul.
           </p>
@@ -150,7 +148,7 @@ const Modules = () => {
                   {module.topics.map((topic, idx) => (
                     <li key={idx} style={{
                       fontSize: '0.95rem',
-                      color: '#666',
+                      color: '#444',
                       marginBottom: '0.75rem',
                       paddingLeft: '1.5rem',
                       position: 'relative'

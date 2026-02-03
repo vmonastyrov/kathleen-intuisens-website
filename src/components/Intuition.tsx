@@ -215,7 +215,7 @@ const Intuition = () => {
                 </h4>
                 <p style={{
                   fontSize: '1rem',
-                  color: '#666',
+                  color: '#444',
                   lineHeight: '1.6',
                   flex: 1
                 }}>
