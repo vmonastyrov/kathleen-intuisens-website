@@ -15,8 +15,25 @@
   font-display: swap;
 }
 
+/* Force light mode on all devices */
+:root,
+html,
+body {
+  color-scheme: light only !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    color-scheme: light only !important;
+    background-color: var(--color-bg-main) !important;
+    color: #333 !important;
+  }
+}
+
 :root {
-  color-scheme: light;
+  color-scheme: light only;
   font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -219,4 +236,21 @@ a {
 .navbar-burger span {
   background-color: var(--color-heading) !important;
   height: 2px;
+}
+
+/* Force light theme on all form elements */
+input,
+textarea,
+select,
+button {
+  color-scheme: light only !important;
+  background-color: white;
+  color: #333;
+}
+
+/* Prevent dark mode inversion on images and backgrounds */
+img,
+picture,
+video {
+  filter: none !important;
 }
