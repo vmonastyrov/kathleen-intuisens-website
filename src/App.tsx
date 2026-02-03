@@ -15,7 +15,8 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (document.referrer.includes('formspree.io')) {
+    if (sessionStorage.getItem('formSubmitted') === 'true') {
+      sessionStorage.removeItem('formSubmitted')
       navigate('/danke')
     }
   }, [navigate])

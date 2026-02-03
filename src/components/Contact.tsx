@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface FormErrors {
   name?: string
@@ -16,6 +16,28 @@ const Contact = () => {
   })
   const [errors, setErrors] = useState<FormErrors>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
+
+  useEffect(() => {
+    const clearForm = () => {
+      if (sessionStorage.getItem('formSubmitted') === 'true') {
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTouched({})
+        setErrors({})
+      }
+    }
+
+    // При обычном монтировании
+    clearForm()
+
+    // При возврате из bfcache
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        clearForm()
+      }
+    }
+    window.addEventListener('pageshow', handlePageShow)
+    return () => window.removeEventListener('pageshow', handlePageShow)
+  }, [])
 
   // Validation functions
   const validateName = (name: string): string | undefined => {
@@ -96,8 +118,9 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     if (!validateForm()) {
       e.preventDefault()
+      return
     }
-    // If validation passes, form submits normally via HTML
+    sessionStorage.setItem('formSubmitted', 'true')
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
