@@ -214,3 +214,9 @@ a {
   color: var(--color-heading);
   font-weight: 600;
 }
+
+/* Mobile burger menu color */
+.navbar-burger span {
+  background-color: var(--color-heading) !important;
+  height: 2px;
+}
