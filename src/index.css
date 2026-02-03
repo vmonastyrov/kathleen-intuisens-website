@@ -15,68 +15,8 @@
   font-display: swap;
 }
 
-/* Force light mode on all devices - aggressive override */
-:root,
-html,
-body,
-* {
-  color-scheme: light only !important;
-}
-
-html {
-  background-color: #F4F0E9 !important;
-}
-
-body {
-  background-color: #F4F0E9 !important;
-  color: #333 !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root,
-  html,
-  body,
-  * {
-    color-scheme: light only !important;
-  }
-
-  html,
-  body {
-    background-color: #F4F0E9 !important;
-    color: #333 !important;
-  }
-
-  .navbar,
-  .navbar-menu,
-  .navbar-item,
-  .box,
-  .section,
-  .container,
-  .card,
-  .content,
-  footer,
-  header,
-  nav,
-  main,
-  article,
-  aside,
-  div {
-    background-color: inherit;
-    color: inherit;
-  }
-
-  .navbar,
-  .navbar-menu {
-    background-color: white !important;
-  }
-
-  .hero {
-    background-color: #214B78 !important;
-  }
-}
-
 :root {
-  color-scheme: light only;
+  color-scheme: light;
   font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -119,6 +59,7 @@ body {
   min-height: 100vh;
   background-color: var(--color-bg-main);
   font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #333;
 }
 
 h1, h2, h3, h4, h5, h6, .title, .subtitle {
@@ -192,16 +133,6 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
   .box {
     padding: 1.5rem !important;
   }
-}
-
-/* Ensure good contrast for all body text */
-body {
-  color: #333;
-}
-
-/* Improve text contrast globally */
-p, li, span {
-  color: inherit;
 }
 
 /* Accessibility Improvements */
@@ -280,117 +211,3 @@ a {
   background-color: var(--color-heading) !important;
   height: 2px;
 }
-
-/* Force light theme on all form elements */
-input,
-textarea,
-select,
-button {
-  color-scheme: light only !important;
-  background-color: white;
-  color: #333;
-}
-
-/* Prevent dark mode inversion on images and backgrounds */
-img,
-picture,
-video {
-  filter: none !important;
-}
-
-/* Samsung Internet and other mobile browsers dark mode override */
-@media screen and (prefers-color-scheme: dark) {
-  * {
-    -webkit-text-fill-color: initial !important;
-  }
-
-  body,
-  .section,
-  .box,
-  .card,
-  .navbar,
-  .footer,
-  .hero-body,
-  .container {
-    -webkit-filter: none !important;
-    filter: none !important;
-  }
-}
-
-/* Explicit background colors for all major sections */
-.section {
-  background-color: inherit;
-}
-
-.box {
-  background-color: white;
-}
-
-.navbar.is-white {
-  background-color: white !important;
-}
-
-footer {
-  background-color: #214B78 !important;
-}
-
-/* Ultra-aggressive dark mode prevention */
-html[data-darkreader-mode],
-html[data-darkreader-scheme],
-body[data-darkreader-mode],
-body[data-darkreader-scheme] {
-  background-color: #F4F0E9 !important;
-  color: #333 !important;
-}
-
-/* Force all text to be dark on light background */
-h1, h2, h3, h4, h5, h6,
-.title, .subtitle {
-  color: #214B78;
-}
-
-/* But keep hero text white */
-.hero .title,
-.hero .subtitle,
-.hero h1,
-.hero h2,
-.hero p {
-  color: white !important;
-}
-
-/* Footer text stays light */
-footer .title,
-footer h3,
-footer h4,
-footer p,
-footer a,
-footer li {
-  color: #D1D5DB;
-}
-
-p, li, span, a, label, div {
-  color: inherit;
-}
-
-/* Ensure white backgrounds stay white */
-.box,
-.card,
-.modal,
-.dropdown-content,
-.navbar,
-.navbar-dropdown,
-input,
-textarea,
-select {
-  background-color: white !important;
-  color: #333 !important;
-}
-
-/* Section backgrounds explicit */
-#home { background-color: #214B78 !important; }
-#about { background-color: #E5E9EF !important; }
-#intuition { background-color: white !important; }
-#module { background-color: #E5E9EF !important; }
-#zusammenarbeit { background-color: white !important; }
-#kontakt { background-color: #E5E9EF !important; }
-#haptonomie { background-color: #E5E9EF !important; }
