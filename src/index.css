@@ -15,20 +15,63 @@
   font-display: swap;
 }
 
-/* Force light mode on all devices */
+/* Force light mode on all devices - aggressive override */
 :root,
 html,
-body {
+body,
+* {
   color-scheme: light only !important;
+}
+
+html {
+  background-color: #F4F0E9 !important;
+}
+
+body {
+  background-color: #F4F0E9 !important;
+  color: #333 !important;
 }
 
 @media (prefers-color-scheme: dark) {
   :root,
   html,
-  body {
+  body,
+  * {
     color-scheme: light only !important;
-    background-color: var(--color-bg-main) !important;
+  }
+
+  html,
+  body {
+    background-color: #F4F0E9 !important;
     color: #333 !important;
+  }
+
+  .navbar,
+  .navbar-menu,
+  .navbar-item,
+  .box,
+  .section,
+  .container,
+  .card,
+  .content,
+  footer,
+  header,
+  nav,
+  main,
+  article,
+  aside,
+  div {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .navbar,
+  .navbar-menu {
+    background-color: white !important;
+  }
+
+  .hero {
+    background-color: #214B78 !important;
   }
 }
 
@@ -253,4 +296,40 @@ img,
 picture,
 video {
   filter: none !important;
+}
+
+/* Samsung Internet and other mobile browsers dark mode override */
+@media screen and (prefers-color-scheme: dark) {
+  * {
+    -webkit-text-fill-color: initial !important;
+  }
+
+  body,
+  .section,
+  .box,
+  .card,
+  .navbar,
+  .footer,
+  .hero-body,
+  .container {
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+}
+
+/* Explicit background colors for all major sections */
+.section {
+  background-color: inherit;
+}
+
+.box {
+  background-color: white;
+}
+
+.navbar.is-white {
+  background-color: white !important;
+}
+
+footer {
+  background-color: #214B78 !important;
 }
