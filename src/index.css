@@ -333,3 +333,64 @@ video {
 footer {
   background-color: #214B78 !important;
 }
+
+/* Ultra-aggressive dark mode prevention */
+html[data-darkreader-mode],
+html[data-darkreader-scheme],
+body[data-darkreader-mode],
+body[data-darkreader-scheme] {
+  background-color: #F4F0E9 !important;
+  color: #333 !important;
+}
+
+/* Force all text to be dark on light background */
+h1, h2, h3, h4, h5, h6,
+.title, .subtitle {
+  color: #214B78;
+}
+
+/* But keep hero text white */
+.hero .title,
+.hero .subtitle,
+.hero h1,
+.hero h2,
+.hero p {
+  color: white !important;
+}
+
+/* Footer text stays light */
+footer .title,
+footer h3,
+footer h4,
+footer p,
+footer a,
+footer li {
+  color: #D1D5DB;
+}
+
+p, li, span, a, label, div {
+  color: inherit;
+}
+
+/* Ensure white backgrounds stay white */
+.box,
+.card,
+.modal,
+.dropdown-content,
+.navbar,
+.navbar-dropdown,
+input,
+textarea,
+select {
+  background-color: white !important;
+  color: #333 !important;
+}
+
+/* Section backgrounds explicit */
+#home { background-color: #214B78 !important; }
+#about { background-color: #E5E9EF !important; }
+#intuition { background-color: white !important; }
+#module { background-color: #E5E9EF !important; }
+#zusammenarbeit { background-color: white !important; }
+#kontakt { background-color: #E5E9EF !important; }
+#haptonomie { background-color: #E5E9EF !important; }
