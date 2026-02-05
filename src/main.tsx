@@ -7,7 +7,7 @@ import AGB from './pages/AGB'
 import Impressum from './pages/Impressum'
 import Datenschutz from './pages/Datenschutz'
 import Danke from './pages/Danke'
-import 'bulma/css/bulma.min.css'
+import 'bulma/css/versions/bulma-no-dark-mode.min.css'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
