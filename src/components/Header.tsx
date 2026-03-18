@@ -25,11 +25,11 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar is-white" role="navigation" aria-label="main navigation" style={{ padding: '0.5rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', backgroundColor: 'white', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
+    <nav className="navbar is-white navbar-fixed" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
             <a className="navbar-item" aria-label="IntuiSens Homepage" onClick={() => scrollToSection('home')} style={{ cursor: 'pointer' }}>
-              <img src={logo} alt="IntuiSens Logo - Berühren berührt" style={{ height: '80px', maxHeight: '80px' }} />
+              <img src={logo} alt="IntuiSens Logo - Berühren berührt" className="navbar-logo" />
             </a>
 
             <a
@@ -49,12 +49,12 @@ const Header = () => {
 
           <div id="navbar-menu" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
             <div className="navbar-start">
-            <a className="navbar-item" onClick={() => scrollToSection('home')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Home</a>
-            <a className="navbar-item" onClick={() => scrollToSection('about')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Über mich</a>
-            <a className="navbar-item" onClick={() => scrollToSection('intuition')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Intuition & Sensitivität</a>
-            <a className="navbar-item" onClick={() => scrollToSection('module')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Module</a>
-            <a className="navbar-item" onClick={() => scrollToSection('zusammenarbeit')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Zusammenarbeit</a>
-            <a className="navbar-item" onClick={() => scrollToSection('kontakt')} style={{ fontWeight: 500, fontSize: '1.1rem', color: 'var(--color-subheading)', cursor: 'pointer' }}>Kontakt</a>
+            <a className="navbar-item nav-link" onClick={() => scrollToSection('home')}>Home</a>
+            <a className="navbar-item nav-link" onClick={() => scrollToSection('about')}>Über mich</a>
+            <a className="navbar-item nav-link" onClick={() => scrollToSection('intuition')}>Intuition & Sensitivität</a>
+            <a className="navbar-item nav-link" onClick={() => scrollToSection('module')}>Module</a>
+            <a className="navbar-item nav-link" onClick={() => scrollToSection('zusammenarbeit')}>Zusammenarbeit</a>
+            <a className="navbar-item nav-link" onClick={() => scrollToSection('kontakt')}>Kontakt</a>
           </div>
         </div>
       </div>

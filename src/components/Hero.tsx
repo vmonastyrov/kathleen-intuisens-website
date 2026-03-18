@@ -2,39 +2,26 @@ import bild3 from '../assets/bild3.png'
 
 const Hero = () => {
   return (
-    <section id="home" className="hero is-medium" aria-labelledby="hero-title" style={{
-      backgroundColor: '#214B78',
-      backgroundImage: `linear-gradient(135deg, rgba(74, 109, 143, 0.6) 0%, rgba(33, 75, 120, 0.7) 100%), url(${bild3})`,
-      backgroundSize: 'cover, cover',
-      backgroundPosition: 'center, center',
-      backgroundRepeat: 'no-repeat, no-repeat'
+    <section id="home" className="hero is-medium hero-bg" aria-labelledby="hero-title" style={{
+      backgroundImage: `linear-gradient(135deg, rgba(74, 109, 143, 0.6) 0%, rgba(33, 75, 120, 0.7) 100%), url(${bild3})`
     }}>
       <div className="hero-body">
         <div className="container">
           <div className="columns is-vcentered">
             <div className="column is-8 is-offset-2 has-text-centered">
-              <h1 id="hero-title" className="title has-text-white" style={{ fontSize: '3.5rem', lineHeight: '1.2', marginBottom: '2rem', fontWeight: 700 }}>
+              <h1 id="hero-title" className="title hero-title">
                 Berühren berührt
               </h1>
-              <p className="subtitle has-text-white" style={{ fontSize: '1.5rem', marginBottom: '3rem', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 3rem' }}>
+              <p className="subtitle hero-subtitle">
                 Ich qualifiziere (werdende) Hebammen, Kinder und ihre Eltern mit allen Sinnen zu begleiten
               </p>
               <div className="buttons is-centered">
                 <a
-                  className="button is-large"
+                  className="button is-medium btn-primary"
                   onClick={() => document.getElementById('intuition')?.scrollIntoView({ behavior: 'smooth' })}
                   aria-label="Mehr über Intuition und Sensitivität erfahren"
-                  style={{
-                    backgroundColor: 'var(--color-yellow-green)',
-                    color: 'white',
-                    fontWeight: 600,
-                    padding: '1.75rem 3rem',
-                    borderRadius: '8px',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
                 >
-                  Mehr erfahren →
+                  Mehr erfahren
                 </a>
               </div>
             </div>

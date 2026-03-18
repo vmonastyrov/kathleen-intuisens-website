@@ -23,29 +23,22 @@
 
   /* IntuiSens Color Palette */
   /* Primary Accent Colors */
-  --color-gold: #FCC741;           /* Gelb-Gold - für Logo, CTA, Textzeilen, Boxen, Icons */
-  --color-gold-light: #FDD87A;     /* Gelb-Gold 30% heller */
-  --color-gold-lighter: #FEE9B3;   /* Gelb-Gold 60% heller */
-  --color-yellow-green: #95B467;   /* Warmes Gelb-Grün - für Icons, Bullets, Links, Buttons */
-  --color-yellow-green-light: #B5CB95; /* Gelb-Grün 30% heller */
+  --color-gold: #FCC741;
+  --color-gold-light: #FDD87A;
+  --color-gold-lighter: #FEE9B3;
+  --color-yellow-green: #95B467;
+  --color-yellow-green-light: #B5CB95;
 
   /* Background Colors */
-  --color-bg-main: #F4F0E9;        /* Seitenhintergrund - weiches warmes Off-White */
-  --color-bg-section1: #E5E9EF;    /* Abschnittshintergründe1 - Hell-Graumilieu mit warmem Stich */
-  --color-bg-section2: #E9EEF4;    /* Abschnittshintergründe2 - Blasses Taupe-Blau-Greige */
+  --color-bg-main: #F4F0E9;
+  --color-bg-section1: #E5E9EF;
+  --color-bg-section2: #E9EEF4;
 
   /* Text & UI Colors */
-  --color-heading: #214B78;        /* Haupt-Überschrift - Tiefes Blau-Grau-Blau */
-  --color-subheading: #4A6D8F;     /* Unter-Überschrift/Untertitel - Graublau */
-  --color-divider: #C7CED8;        /* Dezente Trenn-Linien - Gedämpftes Grau */
-
-  /* Legacy colors */
-  --color-yellow: #FCC741;
-  --color-lime: #95B467;
-  --color-green: #95B467;
-  --color-teal: #4A6D8F;
-  --color-cyan: #214B78;
-  --color-blue: #214B78;
+  --color-heading: #214B78;
+  --color-subheading: #4A6D8F;
+  --color-body: #555;
+  --color-divider: #C7CED8;
 }
 
 * {
@@ -62,82 +55,540 @@ body {
   color: #333;
 }
 
+strong, b {
+  color: inherit;
+}
+
 h1, h2, h3, h4, h5, h6, .title, .subtitle {
   font-family: 'Domine', Georgia, 'Times New Roman', serif !important;
 }
 
-/* Custom styles */
-.hero-gradient {
-  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-teal) 100%);
-}
 
-.section-gap {
+/* ============================================
+   LAYOUT: Sections
+   ============================================ */
+
+.section-light {
+  background-color: white;
   padding: 5rem 1.5rem;
 }
 
-@media screen and (max-width: 768px) {
-  .section-gap {
-    padding: 3rem 1.5rem;
-  }
-
-  /* Mobile image optimization */
-  .hero {
-    background-size: cover !important;
-    background-position: center center !important;
-  }
-
-  .hero .title {
-    font-size: 2rem !important;
-  }
-
-  .hero .subtitle {
-    font-size: 1.1rem !important;
-  }
-
-  /* Ensure images scale properly on mobile */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  figure.image {
-    margin: 0 auto 2rem;
-    max-width: 280px;
-  }
-
-  /* Better text sizing on mobile */
-  .section .title {
-    font-size: 1.75rem !important;
-  }
-
-  .section p {
-    font-size: 1rem !important;
-  }
-
-  /* Stack columns on mobile */
-  .columns.is-vcentered {
-    flex-direction: column;
-  }
-
-  .columns.is-vcentered .column.is-offset-1 {
-    margin-left: 0;
-  }
-
-  /* Limit image heights on mobile */
-  figure.image img {
-    max-height: 300px;
-    object-fit: cover;
-  }
-
-  /* Better box padding on mobile */
-  .box {
-    padding: 1.5rem !important;
-  }
+.section-muted {
+  background-color: var(--color-bg-section1);
+  padding: 5rem 1.5rem;
 }
 
-/* Accessibility Improvements */
 
-/* Skip to content link */
+/* ============================================
+   TYPOGRAPHY: Headings
+   ============================================ */
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--color-heading);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.section-title--centered {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.section-title--tight {
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-subheading);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.hero-bg {
+  background-color: #214B78;
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-weight: 700;
+  color: var(--color-gold-light);
+}
+
+
+/* ============================================
+   TYPOGRAPHY: Body Text
+   ============================================ */
+
+.body-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-body);
+}
+
+.body-text-sm {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-body);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: var(--color-body);
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.intro-text--narrow {
+  max-width: 800px;
+}
+
+.accent-link {
+  color: var(--color-yellow-green);
+  text-decoration: none;
+}
+
+.app-card-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-yellow-green);
+  margin-bottom: 1rem;
+}
+
+
+/* ============================================
+   SPACING UTILITIES
+   ============================================ */
+
+.mb-paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.mb-paragraph-lg {
+  margin-bottom: 2rem;
+}
+
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-primary {
+  background-color: var(--color-yellow-green);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+
+/* ============================================
+   CARDS & BOXES
+   ============================================ */
+
+.card-method {
+  height: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  background-color: #F4F0E9;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--color-divider);
+}
+
+.card-method--active {
+  border-color: var(--color-heading);
+  background-color: rgba(33,75,120,0.06);
+}
+
+.card-module {
+  height: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px solid var(--color-divider);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-application {
+  height: 100%;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-divider);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.card-application__body {
+  padding: 2rem;
+}
+
+.card-title {
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+
+.card-title--tall {
+  min-height: 3rem;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: var(--color-body);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.info-box {
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.info-box--warm {
+  background-color: #EBE7E0;
+  border: 2px solid var(--color-divider);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.info-box--white {
+  background-color: white;
+  border: 2px solid var(--color-divider);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.info-box--blue {
+  background-color: #C7CED8;
+  border: none;
+}
+
+.info-box--light {
+  background-color: var(--color-bg-section2);
+  border: none;
+}
+
+.form-box {
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.detail-panel {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 2px solid;
+  animation: fadeIn 0.3s ease;
+}
+
+.detail-card {
+  height: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border: 2px solid;
+}
+
+.detail-card__title {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+.detail-card__text {
+  font-size: 1rem;
+  color: var(--color-body);
+  line-height: 1.7;
+}
+
+
+/* ============================================
+   IMAGES & FIGURES
+   ============================================ */
+
+.figure-rounded {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.figure-rounded--shadow {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.img-cover {
+  object-fit: cover;
+  width: 100%;
+}
+
+.img-cover--tall {
+  height: 500px;
+}
+
+.img-cover--medium {
+  height: 250px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.img-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.avatar-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+.custom-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-list li {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.custom-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-yellow-green);
+  font-weight: bold;
+}
+
+.info-list {
+  font-size: 1.05rem;
+  color: var(--color-body);
+  line-height: 2;
+}
+
+
+/* ============================================
+   MODULE NUMBER BADGE
+   ============================================ */
+
+.module-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: var(--color-yellow-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.form-input {
+  background-color: white;
+  color: #363636;
+  -webkit-appearance: none;
+  appearance: none;
+  color-scheme: light;
+  border-color: var(--color-divider);
+}
+
+.form-input--error {
+  border-color: #f14668;
+}
+
+.form-label {
+  color: var(--color-heading);
+}
+
+.form-help-error {
+  color: #f14668;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: var(--color-body);
+  margin-top: 1rem;
+}
+
+
+/* ============================================
+   HEADER / NAVBAR
+   ============================================ */
+
+.navbar-fixed {
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--color-subheading);
+  cursor: pointer;
+}
+
+.navbar-logo {
+  height: 80px !important;
+  max-height: 80px !important;
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer-section {
+  background-color: var(--color-heading);
+  color: white;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.footer-brand {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.footer-text {
+  color: #D1D5DB;
+  line-height: 2;
+  font-size: 1.05rem;
+}
+
+.footer-text--intro {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.footer-link {
+  color: #D1D5DB;
+  transition: color 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  color: var(--color-yellow-green);
+  opacity: 1;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav-list li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-divider {
+  background-color: rgba(255,255,255,0.2);
+  margin: 3rem 0 1.5rem;
+  height: 1px;
+  border: none;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: #B0B5BC;
+  font-size: 0.9rem;
+}
+
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
 .skip-to-content {
   position: absolute;
   top: -40px;
@@ -155,7 +606,6 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
   top: 0;
 }
 
-/* Enhanced focus indicators */
 a:focus,
 button:focus,
 input:focus,
@@ -165,7 +615,6 @@ select:focus {
   outline-offset: 2px;
 }
 
-/* Focus visible for modern browsers */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -175,19 +624,16 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
-/* Ensure interactive elements have hover states */
 a:hover,
 button:hover {
   opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 
-/* Improved link styles for better visibility */
 a {
   transition: all 0.2s ease;
 }
 
-/* Screen reader only content */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -200,14 +646,83 @@ a {
   border-width: 0;
 }
 
-/* Focus within for form fields */
 .field:focus-within label {
   color: var(--color-heading);
   font-weight: 600;
 }
 
-/* Mobile burger menu color */
 .navbar-burger span {
   background-color: var(--color-heading) !important;
   height: 2px;
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+  .section-light,
+  .section-muted {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  .hero .title,
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero .subtitle,
+  .hero-subtitle {
+    font-size: 1.25rem !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  figure.image {
+    margin: 0 auto 2rem;
+    max-width: 280px;
+  }
+
+  .section .title,
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+
+  .section p {
+    font-size: 1rem !important;
+  }
+
+  .columns.is-vcentered {
+    flex-direction: column;
+  }
+
+  .columns.is-vcentered .column.is-offset-1 {
+    margin-left: 0;
+  }
+
+  figure.image img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  .box {
+    padding: 1.5rem !important;
+  }
+
+  .img-cover--tall {
+    height: 300px;
+  }
+
+  .img-cover--medium {
+    height: 200px;
+  }
 }

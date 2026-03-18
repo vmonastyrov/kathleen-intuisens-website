@@ -35,65 +35,41 @@ const Haptonomie = () => {
   return (
     <>
       {/* Main Haptonomie Section */}
-      <section id="haptonomie" className="section" aria-labelledby="haptonomie-heading" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
+      <section id="haptonomie" className="section section-muted" aria-labelledby="haptonomie-heading">
         <div className="container">
           <div className="columns is-vcentered">
             <div className="column is-6">
-              <figure className="image" style={{ borderRadius: '12px', overflow: 'hidden' }}>
+              <figure className="image figure-rounded">
                 <img
                   src={img1}
                   alt="Haptonomie - Einfühlsame Berührung und Verbindung"
-                  style={{ objectFit: 'cover', width: '100%', height: '500px' }}
+                  className="img-cover img-cover--tall"
                 />
               </figure>
             </div>
             <div className="column is-5 is-offset-1">
-              <p style={{
-                fontSize: '1.1rem',
-                color: 'var(--color-yellow-green)',
-                fontWeight: 600,
-                marginBottom: '1rem',
-                textTransform: 'uppercase',
-                letterSpacing: '1px'
-              }} aria-label="Seitenbereich">
-                Was ist Haptonomie?
-              </p>
-              <h2 id="haptonomie-heading" className="title" style={{
-                fontSize: '2.5rem',
-                color: 'var(--color-heading)',
-                marginBottom: '2rem',
-                lineHeight: '1.2'
-              }}>
+              <h2 id="haptonomie-heading" className="title section-title">
                 Ich fühle · ich bin · richtig · wie ich bin
               </h2>
-              <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555' }}>
-                <p style={{ marginBottom: '1.5rem' }}>
+              <div className="content body-text">
+                <p className="mb-paragraph">
                   Haptonomie – die Kraft der einfühlsamen Berührung stärkt Vertrauen, Geborgenheit und innere Ruhe.
                   Sie öffnet den Raum für echte Begegnung mit uns selbst und anderen.
                 </p>
-                <p style={{ marginBottom: '1.5rem' }}>
+                <p className="mb-paragraph">
                   Haptonomie verbindet zwei altgriechische Begriffe: <em>nomos</em> – das Gesetz des Lebens und
                   <em> hapto</em> – berühren, verbinden, vereinen. Schon vor der Geburt erfahren wir über unsere Haut,
                   dass wir in Beziehung stehen: zu uns selbst, zu anderen und zur Welt.
                 </p>
-                <p style={{ marginBottom: '2rem' }}>
+                <p className="mb-paragraph-lg">
                   Jede Berührung bestätigt unser Sein und stärkt unser Erleben von Sicherheit, Geborgenheit und
                   Ankommen bei uns selbst. So entstehen in uns Vertrauen, Stabilität und die Fähigkeit, tragende
                   Beziehungen zu gestalten.
                 </p>
                 <a
                   onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="button is-medium"
+                  className="button is-medium btn-primary"
                   aria-label="Kontakt für Haptonomie-Sitzungen aufnehmen"
-                  style={{
-                    backgroundColor: 'var(--color-yellow-green)',
-                    color: 'white',
-                    border: 'none',
-                    fontWeight: 600,
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    cursor: 'pointer'
-                  }}
                 >
                   Kontakt aufnehmen
                 </a>
@@ -104,22 +80,13 @@ const Haptonomie = () => {
       </section>
 
       {/* Applications Grid */}
-      <section className="section" aria-labelledby="applications-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+      <section className="section section-light" aria-labelledby="applications-heading">
         <div className="container">
           <div className="has-text-centered mb-6">
-            <h2 id="applications-heading" className="title" style={{
-              fontSize: '2.5rem',
-              color: 'var(--color-heading)',
-              marginBottom: '1rem'
-            }}>
+            <h2 id="applications-heading" className="title section-title section-title--tight">
               Haptonomie-Anwendungen
             </h2>
-            <p className="subtitle" style={{
-              fontSize: '1.2rem',
-              color: '#444',
-              maxWidth: '800px',
-              margin: '0 auto'
-            }}>
+            <p className="subtitle intro-text intro-text--narrow" style={{ margin: '0 auto' }}>
               Haptonomie begleitet in allen Lebensphasen
             </p>
           </div>
@@ -127,40 +94,22 @@ const Haptonomie = () => {
           <div className="columns is-multiline">
             {applications.map((app, index) => (
               <div key={index} className="column is-6">
-                <article className="box" style={{
-                  height: '100%',
-                  padding: '0',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  border: '1px solid var(--color-divider)',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.08)'
-                }}>
+                <article className="box card-application">
                   <figure className="image">
                     <img
                       src={app.image}
                       alt={`${app.title} - ${app.subtitle}`}
-                      style={{ objectFit: 'cover', width: '100%', height: '250px' }}
+                      className="img-cover img-cover--medium"
                     />
                   </figure>
-                  <div style={{ padding: '2rem' }}>
-                    <h3 className="title is-5" style={{
-                      color: 'var(--color-heading)',
-                      marginBottom: '0.5rem'
-                    }}>
+                  <div className="card-application__body">
+                    <h3 className="title is-5 card-title">
                       {app.title}
                     </h3>
-                    <p style={{
-                      fontSize: '0.95rem',
-                      color: 'var(--color-yellow-green)',
-                      marginBottom: '1rem'
-                    }}>
+                    <p className="app-card-subtitle">
                       {app.subtitle}
                     </p>
-                    <p style={{
-                      fontSize: '1rem',
-                      color: '#444',
-                      lineHeight: '1.7'
-                    }}>
+                    <p className="card-description">
                       {app.description}
                     </p>
                   </div>
@@ -170,16 +119,11 @@ const Haptonomie = () => {
           </div>
 
           {/* Session Info */}
-          <div className="box mt-6" style={{
-            backgroundColor: 'var(--color-bg-section2)',
-            border: 'none',
-            borderRadius: '12px',
-            padding: '2.5rem'
-          }}>
-            <h3 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
+          <div className="box mt-6 info-box info-box--light">
+            <h3 className="title is-4 card-title" style={{ marginBottom: '1.5rem' }}>
               Wie läuft eine Haptonomie-Sitzung ab?
             </h3>
-            <div className="content" style={{ fontSize: '1.05rem', color: '#555', lineHeight: '1.8' }}>
+            <div className="content body-text-sm">
               <p>
                 Eine Sitzung dauert 20–75 Minuten und beginnt mit einem kurzen Vorgespräch, in dem das Anliegen
                 geklärt wird. Die haptonomische Arbeit findet meist auf einer Matte, liegend oder halbsitzend, statt.

@@ -132,54 +132,22 @@ const Intuition = () => {
   const expandedDetails = expandedMethod ? techniqueDetails[expandedMethod] : null
 
   return (
-    <section id="intuition" className="section" aria-labelledby="intuition-heading" style={{ backgroundColor: 'white', padding: '5rem 1.5rem' }}>
+    <section id="intuition" className="section section-light" aria-labelledby="intuition-heading">
       <div className="container">
         <div className="has-text-centered mb-6">
-          <p style={{
-            fontSize: '1.75rem',
-            color: 'var(--color-yellow-green)',
-            fontWeight: 600,
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-            letterSpacing: '1px'
-          }} aria-label="Seitenbereich">
-            Intuition und Sensitivität
-          </p>
-          <h2 id="intuition-heading" className="title" style={{
-            fontSize: '2.5rem',
-            color: 'var(--color-heading)',
-            marginBottom: '2rem',
-            lineHeight: '1.3',
-            maxWidth: '900px',
-            margin: '0 auto 2rem'
-          }}>
+          <h2 id="intuition-heading" className="title section-title section-title--centered">
             Intuition und Sensitivität in der Geburts-, Frauen und Familienbegleitung
           </h2>
-          <p style={{
-            fontSize: '1.1rem',
-            color: '#555',
-            lineHeight: '1.8',
-            maxWidth: '900px',
-            margin: '0 auto 3rem'
-          }}>
+          <p className="intro-text">
             <strong>„Weise Frau – Sage-femme"</strong> ist auch heute noch die Berufsbezeichnung der französischen Hebammen. Das Studium macht uns wissend und professionell kompetent. Weise machen uns unsere Erfahrungen, unsere Offenheit und Empfänglichkeit.
           </p>
-          <p style={{
-            fontSize: '1.1rem',
-            color: '#555',
-            lineHeight: '1.8',
-            maxWidth: '900px',
-            margin: '0 auto 3rem'
-          }}>
+          <p className="intro-text">
             In meinen Ausbildungs-Modulen erfahren die Teilnehmenden über praktische Übungen, feine Signale und Reaktionen wahrzunehmen und auf sie entspannend einzugehen. Diese ermöglichen eine bewusste, intuitive Verbindung mit dem ungeborenen Kind und den Eltern. Die Teilnehmenden entwickeln eine innere Präsenz, mit der sie Eltern in das Hineinwachsen in ihre neue Rolle bewusster begleiten und Selbst-Sicherheit vermitteln können. Und so eine noch sensiblere Geburts-, Frauen- und Familienbegleitung.
           </p>
         </div>
 
         <div className="has-text-centered mb-5">
-          <h3 className="title is-4" style={{
-            color: 'var(--color-heading)',
-            marginBottom: '1rem'
-          }}>
+          <h3 className="title is-4 card-title">
             Die praxisorientierten Module verbinden vier körpertherapeutische Verfahren
           </h3>
         </div>
@@ -187,53 +155,25 @@ const Intuition = () => {
         <div className="columns is-multiline">
           {methods.map((method) => (
             <div key={method.id} className="column is-6-tablet is-3-desktop">
-              <div className="box" style={{
-                height: '100%',
-                padding: '2.5rem 2rem',
-                borderRadius: '12px',
-                border: expandedMethod === method.id ? `2px solid ${techniqueDetails[method.id].color}` : '2px solid var(--color-divider)',
-                backgroundColor: expandedMethod === method.id ? `${techniqueDetails[method.id].color}10` : '#F4F0E9',
-                textAlign: 'center',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                display: 'flex',
-                flexDirection: 'column'
-              }}>
+              <div className={`box card-method ${expandedMethod === method.id ? 'card-method--active' : ''}`}>
                 <div style={{ marginBottom: '1.5rem' }}>
                   <img
                     src={method.icon}
                     alt={method.title}
-                    style={{ width: '80px', height: '80px', objectFit: 'contain' }}
+                    className="img-icon"
                   />
                 </div>
-                <h4 className="title is-5" style={{
-                  color: 'var(--color-heading)',
-                  marginBottom: '1rem',
-                  minHeight: '3rem'
-                }}>
+                <h4 className="title is-5 card-title card-title--tall">
                   {method.title}
                 </h4>
-                <p style={{
-                  fontSize: '1rem',
-                  color: '#444',
-                  lineHeight: '1.6',
-                  flex: 1
-                }}>
+                <p className="card-description">
                   {method.description}
                 </p>
                 <button
                   onClick={() => handleToggle(method.id)}
+                  className="btn-toggle"
                   style={{
-                    marginTop: '1.5rem',
-                    padding: '0.75rem 1.5rem',
-                    backgroundColor: expandedMethod === method.id ? techniqueDetails[method.id].color : 'var(--color-yellow-green)',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                    fontWeight: 600,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.2s ease'
+                    backgroundColor: expandedMethod === method.id ? techniqueDetails[method.id].color : 'var(--color-yellow-green)'
                   }}
                 >
                   {expandedMethod === method.id ? 'Schließen' : 'Mehr erfahren'}
@@ -245,14 +185,13 @@ const Intuition = () => {
 
         {/* Expanded Details Section */}
         {expandedDetails && (
-          <div style={{
-            marginTop: '3rem',
-            padding: '2.5rem',
-            backgroundColor: `${expandedDetails.color}08`,
-            borderRadius: '12px',
-            border: `2px solid ${expandedDetails.color}30`,
-            animation: 'fadeIn 0.3s ease'
-          }}>
+          <div
+            className="detail-panel"
+            style={{
+              backgroundColor: `${expandedDetails.color}08`,
+              borderColor: `${expandedDetails.color}30`
+            }}
+          >
             <div className="has-text-centered mb-5">
               <h3 className="title is-3" style={{ color: expandedDetails.color }}>
                 {expandedDetails.title}
@@ -262,26 +201,17 @@ const Intuition = () => {
             <div className="columns is-multiline">
               {expandedDetails.items.map((item, index) => (
                 <div key={index} className="column is-6">
-                  <article className="box" style={{
-                    height: '100%',
-                    padding: '2rem',
-                    borderRadius: '12px',
-                    border: `2px solid ${expandedDetails.color}20`,
-                    backgroundColor: 'white',
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.06)'
-                  }}>
-                    <h4 className="title is-5" style={{
-                      color: expandedDetails.color,
-                      marginBottom: '1rem',
-                      fontSize: '1.15rem'
-                    }}>
+                  <article
+                    className="box detail-card"
+                    style={{ borderColor: `${expandedDetails.color}20` }}
+                  >
+                    <h4
+                      className="title is-5 detail-card__title"
+                      style={{ color: expandedDetails.color }}
+                    >
                       {index + 1}. {item.title}
                     </h4>
-                    <p style={{
-                      fontSize: '1rem',
-                      color: '#555',
-                      lineHeight: '1.7'
-                    }}>
+                    <p className="detail-card__text">
                       {item.description}
                     </p>
                   </article>
@@ -292,17 +222,8 @@ const Intuition = () => {
             <div className="has-text-centered mt-5">
               <button
                 onClick={() => setExpandedMethod(null)}
-                style={{
-                  padding: '0.75rem 2rem',
-                  backgroundColor: 'transparent',
-                  color: expandedDetails.color,
-                  border: `2px solid ${expandedDetails.color}`,
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                  transition: 'all 0.2s ease'
-                }}
+                className="btn-outline"
+                style={{ color: expandedDetails.color, borderColor: expandedDetails.color }}
               >
                 Schließen
               </button>
@@ -310,17 +231,11 @@ const Intuition = () => {
           </div>
         )}
 
-        <div className="box mt-6" style={{
-          backgroundColor: '#EBE7E0',
-          border: '2px solid var(--color-divider)',
-          borderRadius: '12px',
-          padding: '2.5rem',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
-        }}>
-          <p className="title is-5" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
+        <div className="box mt-6 info-box info-box--warm">
+          <p className="title is-5 card-title" style={{ marginBottom: '1.5rem' }}>
             Kompakt eingebettet sind aktuelle Erkenntnisse der
           </p>
-          <div className="content" style={{ fontSize: '1.05rem', color: '#555', lineHeight: '2' }}>
+          <div className="content body-text-sm" style={{ lineHeight: '2' }}>
             <ul>
               <li>körperbasierten Psychotherapie</li>
               <li>prä- und perinatalen Psychologie, klinische Psychologie, Verhaltenspsychologie</li>

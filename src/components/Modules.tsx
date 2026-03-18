@@ -35,63 +35,36 @@ const Modules = () => {
   ]
 
   return (
-    <section id="module" className="section" aria-labelledby="modules-heading" style={{ backgroundColor: 'var(--color-bg-section1)', padding: '5rem 1.5rem' }}>
+    <section id="module" className="section section-muted" aria-labelledby="modules-heading">
       <div className="container">
         <div className="has-text-centered mb-6">
-          <p style={{
-            fontSize: '1.75rem',
-            color: 'var(--color-yellow-green)',
-            fontWeight: 600,
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-            letterSpacing: '1px'
-          }} aria-label="Seitenbereich">
-            Ausbildungs-Module
-          </p>
-          <h2 id="modules-heading" className="title" style={{
-            fontSize: '2.5rem',
-            color: 'var(--color-heading)',
-            marginBottom: '2rem'
-          }}>
+          <h2 id="modules-heading" className="title section-title">
             Ausbildungs-Module für Hochschulstudium und Hebammenpraxis
           </h2>
         </div>
 
         {/* Basis Module */}
-        <div className="box" style={{
-          backgroundColor: 'white',
-          borderRadius: '12px',
-          padding: '3rem',
-          marginBottom: '3rem',
-          border: '2px solid var(--color-divider)',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
-        }}>
+        <div className="box info-box info-box--white" style={{ marginBottom: '3rem' }}>
           <div className="columns is-vcentered">
             <div className="column is-2 has-text-centered">
               <img
                 src={basisIcon}
                 alt="Basis-Modul Icon"
-                style={{
-                  width: '80px',
-                  height: '80px',
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  margin: '0 auto'
-                }}
+                className="avatar-icon"
               />
             </div>
             <div className="column is-10">
-              <h3 className="title is-3" style={{ color: 'var(--color-heading)', marginBottom: '1rem' }}>
+              <h3 className="title is-3 card-title">
                 Das Basis-Modul
               </h3>
-              <p className="subtitle is-5" style={{ color: 'var(--color-subheading)', marginBottom: '1.5rem' }}>
+              <p className="body-text-sm mb-paragraph">
                 Berührung – Beziehung – Präsenz
               </p>
-              <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.8', marginBottom: '1rem' }}>
-                <strong>Zentrale Kompetenzen im Hebammenberuf:</strong> Praxisnahes Wissen und verkörperte Erfahrung
+              <p className="body-text-sm mb-paragraph">
+                Zentrale Kompetenzen im Hebammenberuf: Praxisnahes Wissen und verkörperte Erfahrung
                 in der Haptonomie und Achtsamkeit
               </p>
-              <p style={{ fontSize: '1rem', color: '#555' }}>
+              <p className="body-text-sm">
                 Abhängig von den Ressourcen als 3-tägiges „Basis-Intensivseminar" oder 1-tägiges
                 „Basis-Einführungsseminar" mit Teilnahmebescheinigung
               </p>
@@ -101,10 +74,10 @@ const Modules = () => {
 
         {/* Advanced Modules */}
         <div className="mb-5">
-          <h3 className="title is-4 has-text-centered" style={{ color: 'var(--color-heading)', marginBottom: '2rem' }}>
+          <h3 className="title is-4 has-text-centered card-title" style={{ marginBottom: '2rem' }}>
             Die Aufbau-Module
           </h3>
-          <p className="has-text-centered" style={{ fontSize: '1.1rem', color: '#444', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
+          <p className="has-text-centered intro-text intro-text--narrow">
             6 Module sind im Baukastensystem einzeln buchbar. Optimalerweise ein Modul je Semester.
             Dauer jeweils 5-tägig plus Selbststudium und Portfolioarbeit mit Zertifikat, optional curricular integrierbar, 1 ECTS-Punkt je Modul.
           </p>
@@ -113,52 +86,16 @@ const Modules = () => {
         <div className="columns is-multiline">
           {advancedModules.map((module, index) => (
             <div key={index} className="column is-6-tablet is-4-desktop">
-              <div className="box" style={{
-                height: '100%',
-                padding: '2rem',
-                borderRadius: '12px',
-                backgroundColor: 'white',
-                border: '1px solid var(--color-divider)',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-              }}>
-                <div style={{
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '8px',
-                  backgroundColor: 'var(--color-yellow-green)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '1.5rem',
-                  fontSize: '1.5rem',
-                  fontWeight: 700,
-                  color: 'white'
-                }}>
+              <div className="box card-module">
+                <div className="module-number">
                   {module.number}
                 </div>
-                <h4 className="title is-5" style={{
-                  color: 'var(--color-heading)',
-                  marginBottom: '1.5rem',
-                  minHeight: '3rem'
-                }}>
+                <h4 className="title is-5 card-title card-title--tall">
                   {module.title}
                 </h4>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
+                <ul className="custom-list">
                   {module.topics.map((topic, idx) => (
-                    <li key={idx} style={{
-                      fontSize: '0.95rem',
-                      color: '#444',
-                      marginBottom: '0.75rem',
-                      paddingLeft: '1.5rem',
-                      position: 'relative'
-                    }}>
-                      <span style={{
-                        position: 'absolute',
-                        left: 0,
-                        color: 'var(--color-yellow-green)',
-                        fontWeight: 'bold'
-                      }}>•</span>
+                    <li key={idx}>
                       {topic}
                     </li>
                   ))}
@@ -171,17 +108,11 @@ const Modules = () => {
         {/* Methodology & Quality */}
         <div className="columns is-multiline mt-5">
           <div className="column is-6">
-            <div className="box" style={{
-              height: '100%',
-              backgroundColor: '#C7CED8',
-              border: 'none',
-              borderRadius: '12px',
-              padding: '2.5rem'
-            }}>
-              <h4 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
+            <div className="box info-box info-box--blue" style={{ height: '100%' }}>
+              <h4 className="title is-4 card-title" style={{ marginBottom: '1.5rem' }}>
                 Methodik
               </h4>
-              <ul style={{ fontSize: '1.05rem', color: '#555', lineHeight: '2' }}>
+              <ul className="info-list">
                 <li>Praxisübungen in Einzel-, Paar- und Gruppenarbeit</li>
                 <li>Selbsterfahrung und Reflexion</li>
                 <li>Anleitung, kollegiale Beratung, Supervision</li>
@@ -190,17 +121,11 @@ const Modules = () => {
             </div>
           </div>
           <div className="column is-6">
-            <div className="box" style={{
-              height: '100%',
-              backgroundColor: '#C7CED8',
-              border: 'none',
-              borderRadius: '12px',
-              padding: '2.5rem'
-            }}>
-              <h4 className="title is-4" style={{ color: 'var(--color-heading)', marginBottom: '1.5rem' }}>
+            <div className="box info-box info-box--blue" style={{ height: '100%' }}>
+              <h4 className="title is-4 card-title" style={{ marginBottom: '1.5rem' }}>
                 Qualitätssicherung
               </h4>
-              <ul style={{ fontSize: '1.05rem', color: '#555', lineHeight: '2' }}>
+              <ul className="info-list">
                 <li>Portfolioarbeit: schriftliche Reflexion und Dokumentation</li>
                 <li>Praktische Demonstration gewählter Methoden</li>
                 <li>Selbststudium/Literaturarbeit</li>
