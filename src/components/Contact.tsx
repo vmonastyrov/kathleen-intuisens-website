@@ -189,7 +189,7 @@ const Contact = () => {
                   </span>
                 </p>
                 <p>
-                  <strong>E-Mail:</strong> <a href="mailto:navanita@live.de" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>navanita@live.de</a>
+                  <strong>E-Mail:</strong> <a href="mailto:info@intuisens.de" style={{ color: 'var(--color-yellow-green)', textDecoration: 'none' }}>info@intuisens.de</a>
                 </p>
               </div>
             </div>
@@ -212,7 +212,7 @@ const Contact = () => {
                 onSubmit={handleSubmit}
                 aria-label="Kontaktformular"
               >
-                
+
                 <div className="field">
                   <label htmlFor="contact-name" className="label" style={{ color: 'var(--color-heading)' }}>
                     Name <span aria-label="Pflichtfeld">*</span>
